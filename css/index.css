@@ -1,0 +1,811 @@
+@charset "utf-8";
+
+@import "reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+@font-face {
+   font-family: "hanaL";
+   src: url("../font/Hana2-Light.ttf");
+}
+@font-face {
+   font-family: "hanaM";
+   src: url("../font/Hana2-Medium.ttf");
+}
+@font-face {
+   font-family: "hanaR";
+   src: url("../font/Hana2-Regular.ttf");
+}
+@font-face {
+   font-family: "hanaB";
+   src: url("../font/Hana2-Bold.ttf");
+}
+@font-face {
+   font-family: "hanaH";
+   src: url("../font/Hana2-Heavy.ttf");
+}
+
+/* 
+색상
+메인 폰트색상 : #4D4D4D
+
+메인 빨간색 : #D60033
+메인 청록색 : #008D8F
+밝은 청록색 : #5ECCC6
+
+배경 노랑 : #FCF7E0
+박스 노랑 : #FDFBEF
+*/
+
+body {
+   font-family: "Noto Sans KR", sans-serif;
+   color: #4d4d4d;
+   background-color: #fcf7e0;
+   letter-spacing: 0.3px;
+}
+
+body::-webkit-scrollbar {
+   width: 10px;
+   height: 10px;
+   background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: #999;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+   background: #666;
+}
+
+body::-webkit-scrollbar-track {
+   background: #fcf7e0;
+}
+
+body {
+   scrollbar-3dlight-color: #fcf7e0;
+   scrollbar-arrow-color: #999;
+   scrollbar-base-color: #fcf7e0;
+   scrollbar-face-color: #999;
+   scrollbar-track-color: #fcf7e0;
+   scrollbar-darkshadow-color: #fcf7e0;
+   scrollbar-highlight-color: #fcf7e0;
+   scrollbar-shadow-color: #fcf7e0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: "hanaB";
+   letter-spacing: 0;
+}
+
+.cont-box {
+   text-align: center;
+   background-color: #fdfbef;
+   border-radius: 40px;
+   padding: 2rem;
+}
+.cont-box2 {
+   text-align: center;
+   background-color: rgba(255, 255, 255, 0.7);
+   border-radius: 40px;
+}
+
+section.section {
+   position: relative;
+   background-image: url(../img/bak-img.png);
+   background-repeat: no-repeat;
+   background-position: right center;
+   background-size: contain;
+}
+
+section.section .sub-tit {
+   text-align: center;
+   padding: 3rem 0;
+}
+section.section .sub-tit h2 {
+   font-size: 2.6rem;
+   color: #008d8f;
+   padding-bottom: 1.6rem;
+}
+section.section .sub-tit p {
+   font-size: 1.1rem;
+   line-height: 1.4em;
+   font-weight: 400;
+}
+.green-btn {
+   display: inline-block;
+   min-width: 400px;
+   margin: 0 auto;
+   padding: 0.8rem 4rem 1rem;
+   font-size: 1.2rem;
+   color: white;
+   font-weight: 600;
+   background-color: #008d8f;
+   border-radius: 50px;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.green-btn:hover {
+   color: white;
+}
+
+/* ====================================================================================================== 
+================================================== nav =================================================
+========================================================================================================= */
+
+nav.menu {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 76px;
+   background-color: #5eccc6;
+   z-index: 99;
+}
+.fp-viewing-p0 #menu {
+   opacity: 0;
+   visibility: hidden;
+}
+.fp-viewing-p1 #menu,
+.fp-viewing-p2 #menu,
+.fp-viewing-p3 #menu,
+.fp-viewing-p4 #menu,
+.fp-viewing-p5 #menu,
+.fp-viewing-p6 #menu {
+   opacity: 1;
+   transition: 1s ease-in-out;
+}
+
+.fp-viewing-p1 #menu li:nth-child(1) a,
+.fp-viewing-p2 #menu li:nth-child(1) a {
+   color: #008d8f;
+   font-weight: 600;
+   background-color: white;
+   border-radius: 30px;
+}
+.fp-viewing-p3 #menu li:nth-child(2) a,
+.fp-viewing-p4 #menu li:nth-child(2) a,
+.fp-viewing-p5 #menu li:nth-child(2) a {
+   color: #008d8f;
+   font-weight: 600;
+   background-color: white;
+   border-radius: 30px;
+}
+.fp-viewing-p6 #menu li:nth-child(3) a,
+.fp-viewing-p7 #menu li:nth-child(3) a {
+   color: #008d8f;
+   font-weight: 600;
+   background-color: white;
+   border-radius: 30px;
+}
+
+nav.menu .container {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+}
+nav.menu a.logo img {
+   display: block;
+   height: 60px;
+   margin: 7px 0;
+}
+nav.menu ul {
+   width: 70%;
+   padding-left: 10%;
+}
+nav.menu ul li {
+   display: inline-block;
+}
+nav.menu ul li a {
+   padding: 0.4rem 1.3rem 0.5rem;
+   font-size: 1.1rem;
+   color: white;
+}
+
+nav.menu .user-area {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+}
+nav.menu .user-area * {
+   font-size: 1rem;
+   color: white;
+   font-weight: 600;
+   margin-right: 3px;
+   letter-spacing: -1px;
+}
+/* ====================================================================================================== 
+================================================== main =================================================
+========================================================================================================= */
+
+section.sec0 .logo-area {
+   height: 15%;
+   text-align: right;
+   padding: 6rem 0 1rem;
+}
+section.sec0 .logo-area img {
+   padding-right: 1rem;
+}
+
+section.sec0 .cont-area {
+   height: 75%;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+}
+section.sec0 .text-area {
+   min-width: 370px;
+}
+section.sec0 .text-area h2 {
+   font-size: 1.6rem;
+   padding-bottom: 2rem;
+}
+section.sec0 .text-area h1 {
+   font-size: 4rem;
+   line-height: 1.2em;
+   padding-bottom: 1.6rem;
+}
+section.sec0 .text-area h1 span.color1 {
+   color: #4d4d4d;
+}
+section.sec0 .text-area h1 span.color2 {
+   color: #d60033;
+}
+section.sec0 .text-area h1 span.color3 {
+   color: #3b8587;
+}
+section.sec0 .text-area p {
+   font-size: 1.2rem;
+   line-height: 1.4em;
+   font-weight: 400;
+   padding-bottom: 8rem;
+}
+section.sec0 .text-area b {
+   display: block;
+   font-size: 1.3rem;
+   padding-bottom: 2rem;
+}
+section.sec0 .text-area .btn-wrap {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: flex-start;
+   align-items: center;
+}
+section.sec0 .text-area .btn-wrap a.btn {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem 1.4rem;
+   border-radius: 12px;
+   margin-right: 1rem;
+}
+section.sec0 .text-area .btn-wrap a.btn1 {
+   background-color: #d60033;
+}
+section.sec0 .text-area .btn-wrap a.btn2 {
+   background-color: #008d8f;
+}
+section.sec0 .text-area .btn-wrap a.btn span {
+   font-family: "hanaB";
+   color: white;
+   padding-right: 2rem;
+   font-size: 1.1rem;
+   line-height: 1.1em;
+}
+section.sec0 .img-area {
+   display: flex;
+   flex-flow: row nowrap;
+}
+
+section.sec0 .img-area img {
+   width: 50%;
+   height: auto;
+}
+section.sec0 .img-area img:nth-child(1) {
+   margin-bottom: 25%;
+}
+section.sec0 .img-area img:nth-child(2) {
+   margin-top: 25%;
+}
+
+section.sec0 .more-area {
+   height: 10%;
+   background-color: #5eccc6;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+}
+
+section.sec0 .more-area p {
+   color: white;
+   font-weight: 500;
+   padding-bottom: 0.5rem;
+}
+
+.m_scroll_arrows {
+   display: block;
+   width: 12px;
+   height: 12px;
+   transform: rotate(45deg);
+
+   border-right: 2px solid white;
+   border-bottom: 2px solid white;
+   margin: 0 0 3px 4px;
+}
+
+.unu,
+.doi,
+.trei {
+   -webkit-animation: mouse-scroll 1s infinite;
+   -moz-animation: mouse-scroll 1s infinite;
+   animation: mouse-scroll 1s infinite;
+}
+
+.unu {
+   -webkit-animation-delay: 0.1s;
+   -moz-animation-delay: 0.1s;
+   -webkit-animation-direction: alternate;
+
+   animation-direction: alternate;
+   animation-delay: alternate;
+}
+
+.doi {
+   -webkit-animation-delay: 0.2s;
+   -moz-animation-delay: 0.2s;
+   -webkit-animation-direction: alternate;
+
+   animation-delay: 0.2s;
+   animation-direction: alternate;
+
+   margin-top: -6px;
+}
+
+.trei {
+   -webkit-animation-delay: 0.3s;
+   -moz-animation-delay: 0.3s;
+   -webkit-animation-direction: alternate;
+
+   animation-delay: 0.3s;
+   animation-direction: alternate;
+
+   margin-top: -6px;
+}
+
+@-webkit-keyframes mouse-scroll {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@-moz-keyframes mouse-scroll {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@-o-keyframes mouse-scroll {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes mouse-scroll {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+/* ====================================================================================================== 
+================================================== sec1 =================================================
+========================================================================================================= */
+
+section.sec1 p > * {
+   display: block;
+   text-align: center;
+   letter-spacing: 0;
+}
+section.sec1 p span {
+   font-size: 1.1rem;
+   padding-bottom: 0.5rem;
+}
+section.sec1 p b {
+   font-size: 1.3rem;
+   font-weight: 600;
+}
+
+section.sec1 .top-area,
+section.sec1 .bottom-area {
+   height: 50%;
+}
+
+section.sec1 .top-area ul {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+}
+
+section.sec1 .top-area ul li:nth-child(2n + 1) {
+   border-radius: 20px;
+   background-color: white;
+   box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
+   height: 100%;
+   padding: 2rem;
+   padding-bottom: 0;
+}
+section.sec1 .top-area ul li:nth-child(2n + 1) img {
+   display: block;
+   width: 100%;
+   margin: 0 auto;
+}
+section.sec1 .top-area ul li:nth-child(2n + 1) p {
+   padding-bottom: 1rem;
+}
+
+section.sec1 .top-area ul li:nth-child(2n) {
+   padding: 0 1rem;
+}
+section.sec1 .top-area ul li:nth-child(2n) img {
+   width: 36px;
+}
+
+section.sec1 .bottom-area {
+   padding-top: 2rem;
+   justify-content: center;
+   align-items: center;
+}
+section.sec1 .bottom-area i img {
+   width: 36px;
+   margin: 0 3rem;
+}
+section.sec1 .bottom-area p {
+   padding-left: 10%;
+}
+
+/* ====================================================================================================== 
+================================================== sec2 =================================================
+========================================================================================================= */
+
+section.sec2 .cont-area img {
+   height: 50%;
+}
+section.sec2 .t-box {
+   margin: 1rem;
+   height: 40%;
+   text-align: center;
+   border-radius: 20px;
+   background-color: white;
+   box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
+   padding: 2rem;
+}
+section.sec2 .t-box h6 {
+   font-weight: 600;
+   font-size: 1.4rem;
+   color: #008d8f;
+   padding-bottom: 1rem;
+}
+section.sec2 .t-box p {
+   font-size: 1rem;
+   line-height: 1.6em;
+}
+
+/* ====================================================================================================== 
+================================================== sec3 =================================================
+========================================================================================================= */
+
+section.sec3 .swiper-container {
+   padding: 3rem 1rem;
+}
+section.sec3 .swiper-container .swiper-slide {
+   z-index: 1;
+   padding: 2rem;
+   border-radius: 20px;
+   transition: 0.5s;
+   background-color: white;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+section.sec3 .swiper-container .swiper-slide-active {
+   z-index: 9;
+   opacity: 1;
+   transform: scale(1.2);
+}
+
+section.sec3 .swiper-container .swiper-slide h6 {
+   text-align: center;
+   font-size: 1.2rem;
+   padding-bottom: 2rem;
+   font-weight: 600;
+}
+section.sec3 .t-area {
+   padding: 2rem 0;
+}
+section.sec3 .t-area p {
+   text-align: center;
+   font-size: 1.1rem;
+   line-height: 1.3em;
+}
+section.sec3 .t-area p b {
+   display: block;
+   margin-top: 0.6rem;
+   font-weight: 600;
+}
+
+/* ====================================================================================================== 
+================================================== sec4,5 ================================================
+========================================================================================================= */
+
+section.sec4 .cont-box,
+section.sec5 .cont-box {
+   padding: 4rem 2rem;
+}
+section.sec4 img,
+section.sec5 img {
+   display: block;
+   margin: 1%;
+   width: 23%;
+   border-radius: 20px;
+}
+section.sec5 .sub-tit p b {
+   font-size: 1.2rem;
+   font-weight: 600;
+}
+
+/* ====================================================================================================== 
+================================================== sec6 =================================================
+========================================================================================================= */
+
+section.sec6 ul.how-area {
+   padding: 2rem 0;
+}
+section.sec6 ul.how-area li {
+   position: relative;
+   width: 23%;
+   margin: 1%;
+   padding: 2rem;
+   padding-top: 4rem;
+   border-radius: 20px;
+   background-color: white;
+   box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+section.sec6 ul.how-area li::after {
+   content: "";
+   position: absolute;
+   top: -22px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 54px;
+   height: 54px;
+   background-color: #ffc72c;
+   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 50%;
+   font-size: 1.6rem;
+   line-height: 54px;
+   text-align: center;
+   color: white;
+   font-weight: 600;
+}
+section.sec6 ul.how-area li:nth-child(1):after {
+   content: "1";
+}
+section.sec6 ul.how-area li:nth-child(2):after {
+   content: "2";
+}
+section.sec6 ul.how-area li:nth-child(3):after {
+   content: "3";
+}
+section.sec6 ul.how-area li:nth-child(4):after {
+   content: "4";
+}
+section.sec6 ul.how-area li p {
+   text-align: center;
+   font-size: 1.1rem;
+   line-height: 1.3em;
+   padding-bottom: 2rem;
+}
+section.sec6 .btn {
+   margin: 1rem auto 2rem;
+   font-weight: 400;
+}
+section.sec6 .btn b {
+   color: white;
+   font-weight: 600;
+}
+
+/* ====================================================================================================== 
+================================================== 푸터 ================================================== 
+========================================================================================================= */
+
+footer.footer {
+   background-color: #5eccc6;
+}
+footer.footer * {
+   color: white;
+}
+footer.footer .footer-wrap {
+   height: 240px;
+}
+footer.footer .link-wrap {
+   width: 100%;
+   padding: 0.5rem 0;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+footer.footer ul.link-area li {
+   display: inline-block;
+}
+footer.footer .logo-area {
+   margin: 1rem auto 6rem;
+}
+footer.footer .logo-area img {
+   padding-left: 1rem;
+}
+footer.footer p.copyright {
+   text-align: center;
+}
+
+/* ====================================================================================================== 
+================================================== 1920px =================================================
+========================================================================================================= */
+@media (min-width: 1919px) {
+   .container,
+   .container-lg,
+   .container-md,
+   .container-sm,
+   .container-xl,
+   .container-xxl {
+      max-width: 1440px;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 1400px / container-xxl ========================================
+========================================================================================================= */
+@media (min-width: 1400px) {
+}
+
+/* ====================================================================================================== 
+========================================== 1200px / container-xl ========================================
+========================================================================================================= */
+@media (min-width: 1200px) {
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-lg ========================================
+========================================================================================================= */
+@media (min-width: 992px) {
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-md ========================================
+========================================================================================================= */
+@media (min-width: 768px) {
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-sm ========================================
+========================================================================================================= */
+@media (min-width: 576px) {
+}
+
+/* ====================================================================================================== 
+========================================== 서브페이지 ========================================
+========================================================================================================= */
+
+.subpage section.section {
+   padding: 6rem 0;
+   min-height: 900px;
+}
+.subpage section.section .cont-box {
+   min-height: 600px;
+}
+
+/* ====================================================================================================== 
+========================================== 금융교육 ========================================
+========================================================================================================= */
+
+.financial nav.menu li:nth-child(4) a {
+   color: #008d8f;
+   font-weight: 600;
+   background-color: white;
+   border-radius: 30px;
+}
+section.financial-class ul.mov-area li {
+   position: relative;
+   border-radius: 20px;
+   overflow: hidden;
+   cursor: pointer;
+}
+section.financial-class ul.mov-area li.unlock::after {
+   content: url(../img/mov-lock.svg);
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+section.financial-class ul.mov-area li.unlock::before {
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   background-color: rgb(70, 70, 70, 0.5);
+}
+section.financial-class ul.mov-area li.finish {
+   filter: grayscale(1);
+}
+section.financial-class ul.mov-area li.finish::after {
+   content: "완료";
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   border: 6px solid white;
+   border-radius: 50%;
+   font-size: 1.2rem;
+   color: white;
+   font-weight: 600;
+   line-height: 4.5em;
+}
+section.financial-class ul.mov-area li.finish::before {
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   background-color: rgb(70, 70, 70, 0.5);
+}
+section.financial-class .finish-area {
+   padding: 4rem 0;
+}
+section.financial-class .finish-area p {
+   font-size: 1.1rem;
+   line-height: 1.3em;
+   padding-bottom: 1.6rem;
+}
+
+/* ====================================================================================================== 
+========================================== 로그인 ========================================
+========================================================================================================= */
+
+section.login-page {
+   height: 100vh;
+   position: relative;
+   background-image: url(../img/login-bak.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: auto;
+}
