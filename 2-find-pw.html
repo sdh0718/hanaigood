@@ -43,15 +43,38 @@
          <section class="section login-page">
             <div class="sub-tit">
                <h2>비밀번호 찾기</h2>
+               <p>
+                  회원가입 시 입력한 어린이 아이디,<br />
+                  보호자 휴대폰번호를 입력해주세요.
+               </p>
             </div>
-            <div class="container cont-box">
-               <p>비밀번호를 찾기 위해서 보호자의 이름과 휴대폰을 인증해주세요.</p>
-               <form action="">
-                  <label for="parent-name">보호자 이름</label>
-                  <input type="text" name="parent-name" id="parent-name" />
-                  <input type="button" class="btn green-btn" value="휴대폰 인증" role="button" />
-                  <input type="button" class="btn next green-btn" value="다음으로" role="button" />
-               </form>
+            <div class="container">
+               <div class="cont-box2">
+                  <form action="" class="d-flex flex-column">
+                     <div>
+                        <label for="user-id" class="form-label">아이디</label>
+                        <input type="text" name="user-id" id="user-id" />
+                        <div class="invalid-feedback">아이디를 입력해주세요.</div>
+                     </div>
+
+                     <div class="tel-wrap">
+                        <div>
+                           <label type="tel" class="form-label">보호자 휴대폰번호</label>
+                           <input type="number" name="tel" id="tel" class="number" placeholder="하이픈(-)없이 숫자만 입력" required />
+                           <div class="invalid-feedback">휴대폰번호를 입력해주세요.</div>
+                        </div>
+                        <input type="button" id="telBtn" class="btn" value="문자전송" />
+                     </div>
+
+                     <div class="certnum-wrap">
+                        <label for="certNum" class="form-label">인증번호</label>
+                        <input type="number" name="certNum" id="certNum" class="number" placeholder="인증번호 입력" required />
+                        <div class="invalid-feedback">인증번호를 입력해주세요.</div>
+                     </div>
+
+                     <input type="button" class="btn next green-btn" value="다음" />
+                  </form>
+               </div>
             </div>
          </section>
       </div>

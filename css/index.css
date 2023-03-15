@@ -42,6 +42,11 @@ body {
    color: #4d4d4d;
    background-color: #fcf7e0;
    letter-spacing: 0.3px;
+   -ms-user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -90,9 +95,13 @@ h5 {
    padding: 2rem;
 }
 .cont-box2 {
+   margin: 0 auto;
    text-align: center;
    background-color: rgba(255, 255, 255, 0.7);
    border-radius: 40px;
+   max-width: 900px;
+   min-height: 600px;
+   padding: 2rem;
 }
 
 section.section {
@@ -100,7 +109,7 @@ section.section {
    background-image: url(../img/bak-img.png);
    background-repeat: no-repeat;
    background-position: right center;
-   background-size: contain;
+   background-size: 60% 100%;
 }
 
 section.section .sub-tit {
@@ -144,8 +153,9 @@ nav.menu {
    width: 100%;
    height: 76px;
    background-color: #5eccc6;
-   z-index: 99;
+   z-index: 98;
 }
+
 .fp-viewing-p0 #menu {
    opacity: 0;
    visibility: hidden;
@@ -183,6 +193,10 @@ nav.menu {
    border-radius: 30px;
 }
 
+nav.menu .mo-navi,
+.mo-navi-view {
+   display: none;
+}
 nav.menu .container {
    display: flex;
    flex-flow: row nowrap;
@@ -206,7 +220,6 @@ nav.menu ul li a {
    font-size: 1.1rem;
    color: white;
 }
-
 nav.menu .user-area {
    display: flex;
    flex-flow: row nowrap;
@@ -223,6 +236,12 @@ nav.menu .user-area * {
 /* ====================================================================================================== 
 ================================================== main =================================================
 ========================================================================================================= */
+section.sec0 .mo-img-area {
+   display: none;
+}
+section.sec0 .img-area {
+   display: block;
+}
 
 section.sec0 .logo-area {
    height: 15%;
@@ -317,7 +336,10 @@ section.sec0 .img-area img:nth-child(2) {
 }
 
 section.sec0 .more-area {
+   position: relative;
+   z-index: 10;
    height: 10%;
+   padding: 0.5rem;
    background-color: #5eccc6;
    display: flex;
    flex-flow: column nowrap;
@@ -497,9 +519,10 @@ section.sec1 .bottom-area p {
 ================================================== sec2 =================================================
 ========================================================================================================= */
 
-section.sec2 .cont-area img {
-   height: 50%;
+section.sec2 .cont-area {
+   width: 33.3333%;
 }
+
 section.sec2 .t-box {
    margin: 1rem;
    height: 40%;
@@ -526,6 +549,7 @@ section.sec2 .t-box p {
 
 section.sec3 .swiper-container {
    padding: 3rem 1rem;
+   width: 90%;
 }
 section.sec3 .swiper-container .swiper-slide {
    z-index: 1;
@@ -565,20 +589,21 @@ section.sec3 .t-area p b {
 ================================================== sec4,5 ================================================
 ========================================================================================================= */
 
-section.sec4 .cont-box,
-section.sec5 .cont-box {
-   padding: 4rem 2rem;
-}
 section.sec4 img,
 section.sec5 img {
    display: block;
-   margin: 1%;
-   width: 23%;
+   margin: 0.5%;
+   width: 20%;
    border-radius: 20px;
 }
 section.sec5 .sub-tit p b {
    font-size: 1.2rem;
    font-weight: 600;
+}
+
+section.sec4 .btn,
+section.sec5 .btn {
+   margin: 2rem auto 1rem;
 }
 
 /* ====================================================================================================== 
@@ -646,75 +671,26 @@ section.sec6 .btn b {
 ================================================== 푸터 ================================================== 
 ========================================================================================================= */
 
-footer.footer {
-   background-color: #5eccc6;
-}
 footer.footer * {
    color: white;
 }
+
 footer.footer .footer-wrap {
-   height: 240px;
+   height: 250px;
+   background-color: #5eccc6;
 }
-footer.footer .link-wrap {
-   width: 100%;
-   padding: 0.5rem 0;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+footer.footer .top-area {
+   padding: 1rem 0;
 }
-footer.footer ul.link-area li {
-   display: inline-block;
+footer.footer .top-area > * > * {
+   padding-left: 0.5rem;
 }
-footer.footer .logo-area {
-   margin: 1rem auto 6rem;
-}
-footer.footer .logo-area img {
-   padding-left: 1rem;
+footer.footer a:hover {
+   color: white;
 }
 footer.footer p.copyright {
    text-align: center;
-}
-
-/* ====================================================================================================== 
-================================================== 1920px =================================================
-========================================================================================================= */
-@media (min-width: 1919px) {
-   .container,
-   .container-lg,
-   .container-md,
-   .container-sm,
-   .container-xl,
-   .container-xxl {
-      max-width: 1440px;
-   }
-}
-
-/* ====================================================================================================== 
-========================================== 1400px / container-xxl ========================================
-========================================================================================================= */
-@media (min-width: 1400px) {
-}
-
-/* ====================================================================================================== 
-========================================== 1200px / container-xl ========================================
-========================================================================================================= */
-@media (min-width: 1200px) {
-}
-
-/* ====================================================================================================== 
-========================================== 992px / container-lg ========================================
-========================================================================================================= */
-@media (min-width: 992px) {
-}
-
-/* ====================================================================================================== 
-========================================== 992px / container-md ========================================
-========================================================================================================= */
-@media (min-width: 768px) {
-}
-
-/* ====================================================================================================== 
-========================================== 992px / container-sm ========================================
-========================================================================================================= */
-@media (min-width: 576px) {
+   padding-top: 7rem;
 }
 
 /* ====================================================================================================== 
@@ -724,9 +700,6 @@ footer.footer p.copyright {
 .subpage section.section {
    padding: 6rem 0;
    min-height: 900px;
-}
-.subpage section.section .cont-box {
-   min-height: 600px;
 }
 
 /* ====================================================================================================== 
@@ -740,6 +713,9 @@ footer.footer p.copyright {
    border-radius: 30px;
 }
 section.financial-class ul.mov-area li {
+   width: 30%;
+   margin: 1% auto;
+   max-width: 370px;
    position: relative;
    border-radius: 20px;
    overflow: hidden;
@@ -801,11 +777,290 @@ section.financial-class .finish-area p {
 ========================================== 로그인 ========================================
 ========================================================================================================= */
 
-section.login-page {
-   height: 100vh;
+.login section.login-page {
+   min-height: 100vh;
    position: relative;
    background-image: url(../img/login-bak.png);
    background-repeat: no-repeat;
    background-position: center center;
    background-size: auto;
+}
+
+.login section.login-page form {
+   max-width: 600px;
+   margin: 0 auto;
+   padding-top: 2rem;
+}
+.login section.sec-login form {
+   max-width: 400px;
+   text-align: left;
+}
+.login section.login-page form input[type="text"],
+.login section.login-page form input[type="date"],
+.login section.login-page form input[type="password"] {
+   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
+   padding: 4px;
+   font-size: 1.1rem;
+   border: none;
+   margin-bottom: 1rem;
+}
+.login section.login-page form input[type="checkbox"] {
+   margin: 0;
+   width: 1.1rem;
+   height: 1.1rem;
+}
+.login section.login-page form input[type="button"] {
+   margin: 2rem auto;
+}
+.login section.login-page form input::placeholder {
+   color: #999;
+}
+.login section.login-page .service {
+   margin-top: 1rem;
+}
+
+/* ====================================================================================================== 
+================================================== 1920px =================================================
+========================================================================================================= */
+@media (min-width: 1919px) {
+   .container,
+   .container-lg,
+   .container-md,
+   .container-sm,
+   .container-xl,
+   .container-xxl {
+      max-width: 1440px;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 1400px / container-xxl ========================================
+========================================================================================================= */
+@media (max-width: 1400px) {
+}
+
+/* ====================================================================================================== 
+========================================== 1200px / container-xl ========================================
+========================================================================================================= */
+@media (max-width: 1200px) {
+   section.sec0 .text-area {
+      min-width: unset;
+      width: 100%;
+      padding: 0 1rem;
+   }
+   section.sec0 .text-area h2 {
+      font-size: 1.2rem;
+      padding-bottom: 1rem;
+   }
+   section.sec0 .text-area h1 {
+      font-size: 3rem;
+      line-height: 1.1em;
+      padding-bottom: 1rem;
+   }
+   section.sec0 .text-area p {
+      font-size: 1rem;
+      line-height: 1.1em;
+      padding-bottom: 1rem;
+   }
+   section.sec0 .text-area b {
+      font-size: 1.1rem;
+      font-weight: 500;
+   }
+   section.sec0 .text-area .btn-wrap a.btn {
+      padding: 0.6rem 1rem;
+   }
+   section.sec0 .text-area .btn-wrap a.btn span {
+      padding-right: 1rem;
+      font-size: 1rem;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-lg ========================================
+========================================================================================================= */
+@media (max-width: 992px) {
+   nav.menu {
+      height: 60px;
+   }
+   nav.menu a.logo img {
+      height: 50px;
+      margin: 5px 0;
+   }
+   nav.menu .list,
+   nav.menu .user-area {
+      display: none;
+   }
+   nav.menu .mo-navi {
+      display: block;
+   }
+   nav.menu .mo-navi img {
+      height: 30px;
+   }
+
+   .mo-navi-view {
+      z-index: 99;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+   }
+   .mo-navi-view .nav-wrap {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: white;
+      height: 100%;
+      width: 80%;
+      margin-left: 20%;
+      font-size: 1.2rem;
+   }
+   .mo-navi-view .nav-wrap aside {
+      border-bottom: 1px solid #999;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+   }
+   .mo-navi-view .nav-wrap aside i * {
+      display: inline-block;
+   }
+   .mo-navi-view .nav-wrap > a {
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+   }
+
+   /* ============================================================================= */
+   .cont-box {
+      background-color: unset;
+   }
+   .green-btn {
+      min-width: unset;
+      max-width: 400px;
+      width: 92%;
+      margin: 0 auto;
+      padding: 0.6rem 0;
+      font-size: 1rem;
+   }
+   section.section {
+      background-image: unset;
+      padding: 2rem 0;
+   }
+   section.section .sub-tit {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+   }
+   section.section .sub-tit h2 {
+      font-size: 1.6rem;
+   }
+   section.section .sub-tit p {
+      font-size: 0.9rem;
+      line-height: 1.2em;
+   }
+   /* ============================================================================= */
+   section.sec0 .cont-area,
+   section.sec0 .logo-area {
+      height: unset;
+   }
+   section.sec0 {
+      background-image: url(../img/[mo]bak-img.png);
+   }
+   section.sec0 .mo-img-area {
+      display: block;
+      margin: 1rem 0 2rem;
+   }
+   section.sec0 .img-area {
+      display: none;
+   }
+   section.sec0 .logo-area {
+      text-align: left;
+      padding: 1rem 0 2rem 1.5rem;
+   }
+   section.sec0 .cont-area {
+      justify-content: flex-start;
+   }
+   /* ============================================================================= */
+   section.sec1 .top-area ul li {
+      margin: 0.5rem 0;
+   }
+   section.sec1 p span {
+      font-size: 0.9rem;
+      padding-bottom: 0.5rem;
+   }
+   section.sec1 p b {
+      font-size: 1.1rem;
+      font-weight: 600;
+   }
+   section.sec1 .bottom-area img {
+      margin: 2rem 0;
+   }
+   section.sec1 .bottom-area p {
+      padding: 0;
+   }
+   /* ============================================================================= */
+   section.sec2 .cont-area {
+      width: 100%;
+   }
+   section.sec2 .t-box {
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 2rem 0.5rem;
+   }
+   section.sec2 .t-box p {
+      font-size: 0.9rem;
+   }
+   /* ============================================================================= */
+   section.sec3 .swiper-container {
+      padding: 3rem 1rem;
+      width: 100%;
+   }
+   section.sec3 .t-area p {
+      font-size: 0.9rem;
+   }
+   /* ============================================================================= */
+   section.sec4 img,
+   section.sec5 img {
+      width: 40%;
+      margin: 1%;
+   }
+   /* ============================================================================= */
+   section.sec6 ul.how-area li {
+      width: 80%;
+      max-width: 400px;
+      margin: 1rem auto;
+   }
+   /* ============================================================================= */
+   section.financial-class ul.mov-area li {
+      width: 100%;
+      margin: 1rem auto;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-md ========================================
+========================================================================================================= */
+@media (max-width: 768px) {
+   section.sec4 img,
+   section.sec5 img {
+      width: 48%;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 992px / container-sm ========================================
+========================================================================================================= */
+@media (max-width: 576px) {
+   section.sec0 .text-area h2 {
+      font-size: 1.1rem;
+   }
+   section.sec0 .text-area h1 {
+      font-size: 2.6rem;
+   }
+
+   section.sec6 ul.how-area li {
+      width: 90%;
+   }
 }

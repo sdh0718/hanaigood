@@ -42,38 +42,15 @@
 
          <section class="section login-page">
             <div class="sub-tit">
-               <h2>아이디 찾기</h2>
+               <h2>비밀번호 찾기</h2>
                <p>
-                  회원가입 시 입력한 어린이 이름과<br />
-                  보호자 연락처를 입력해주세요.
+                  비밀번호 변경이 완료되었습니다.<br />
+                  바뀐 비밀번호로 로그인 해주세요.
                </p>
             </div>
             <div class="container">
                <div class="cont-box2">
-                  <form action="" class="d-flex flex-column">
-                     <div>
-                        <label for="user-name">어린이 이름</label>
-                        <input type="text" name="user-name" id="user-name" />
-                        <div class="invalid-feedback">이름을 입력해주세요.</div>
-                     </div>
-
-                     <div class="tel-wrap">
-                        <div>
-                           <label type="tel" class="form-label">보호자 휴대폰번호</label>
-                           <input type="number" name="tel" id="tel" class="number" placeholder="하이픈(-)없이 숫자만 입력" required />
-                           <div class="invalid-feedback">휴대폰번호를 입력해주세요.</div>
-                        </div>
-                        <input type="button" id="telBtn" class="btn" value="문자전송" />
-                     </div>
-
-                     <div class="certnum-wrap">
-                        <label for="certNum" class="form-label">인증번호</label>
-                        <input type="number" name="certNum" id="certNum" class="number" placeholder="인증번호 입력" required />
-                        <div class="invalid-feedback">인증번호를 입력해주세요.</div>
-                     </div>
-
-                     <input type="button" class="btn next green-btn" value="다음" />
-                  </form>
+                  <input type="button" class="btn gotologin green-btn" value="로그인" />
                </div>
             </div>
          </section>
@@ -84,9 +61,9 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let next = document.querySelector(".next");
-         next.addEventListener("click", function () {
-            location.href = "2-find-id-2.html";
+         let gotologin = document.querySelector(".gotologin");
+         gotologin.addEventListener("click", function () {
+            location.href = "2-login.html";
          });
       </script>
    </body>

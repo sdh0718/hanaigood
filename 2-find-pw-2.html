@@ -42,14 +42,26 @@
 
          <section class="section login-page">
             <div class="sub-tit">
-               <h2>아이디 찾기</h2>
-            </div>
-            <div class="container cont-box">
+               <h2>비밀번호 찾기</h2>
                <p>
-                  김하나 어린이의 임시 비밀번호는 <b>CD0004403765</b> 입니다. <br />
-                  하나 아이착한 금융교육에 로그인하세요.
+                  인증이 완료되었습니다.<br />
+                  비밀번호를 재설정 해주세요.
                </p>
-               <input type="button" class="btn next green-btn" value="로그인 하기" role="button" />
+            </div>
+            <div class="container">
+               <div class="cont-box2">
+                  <form action="">
+                     <label for="user-pw">비밀번호 입력</label>
+                     <input type="password" name="user-pw" id="user-pw" />
+                     <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+
+                     <label for="user-repw">비밀번호 확인</label>
+                     <input type="password" name="user-repw" id="user-repw" />
+                     <div class="invalid-feedback">비밀번호를 다시 입력해주세요.</div>
+                     <div class="invalid-feedback">비밀번호가 일치하지 않습니다.</div>
+                  </form>
+                  <input type="button" class="btn next green-btn" value="완료" />
+               </div>
             </div>
          </section>
       </div>
@@ -61,7 +73,7 @@
       <script>
          let next = document.querySelector(".next");
          next.addEventListener("click", function () {
-            location.href = "2-login.html";
+            location.href = "2-find-pw-3.html";
          });
       </script>
    </body>
