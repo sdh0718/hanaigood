@@ -24,7 +24,7 @@
    </head>
 
    <body>
-      <div class="wrap subpage financial">
+      <div class="wrap subpage login">
          <nav id="menu" class="menu">
             <div class="container">
                <a class="logo" href="index.html"><img src="img/hana-mainlogo.svg" alt="mainlogo" /></a>
@@ -82,50 +82,44 @@
             </div>
          </div>
 
-         <section class="section financial-class">
+         <section class="section login-page">
             <div class="sub-tit">
-               <h2>하나 아이착한 금융교실</h2>
+               <h2>회원가입</h2>
+               <p>
+                  하나 아이착한 금융교육은 <br />
+                  만 14세 미만 아동을 대상으로 하는 금융교육 프로그램입니다.
+               </p>
             </div>
-            <div class="container cont-box">
-               <ul class="mov-area d-flex flex-lg-row flex-column justify-content-center">
-                  <li id="mov1" class="active">
-                     <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
-                  </li>
-                  <li id="mov2" class="unlock">
-                     <img class="img-fluid" src="img/mov-thumb2.png" alt="mov-thumb2" />
-                  </li>
-                  <li id="mov3" class="finish">
-                     <img class="img-fluid" src="img/mov-thumb3.png" alt="mov-thumb3" />
-                  </li>
-               </ul>
-               <div class="finish-area">
+            <div class="container">
+               <div class="cont-box2">
                   <p>
-                     수업이 완료되었어요!<br />
-                     수료증과 안내문을 확인해주세요.
+                     따라서 만 14세 미만 어린이의 회원가입을 위해<br />
+                     <b>보호자(법정대리인)의 연락처와 동의가 필요합니다. </b>
                   </p>
-                  <a href="1-certificate.html" target="_blank" class="btn green-btn">수료증 확인</a>
+                  <form action="" class="d-flex flex-column">
+                     <div class="tel-wrap">
+                        <div>
+                           <input type="number" name="tel" id="tel" class="number" placeholder="보호자의 휴대폰 번호를 입력하세요." required />
+                           <div class="invalid-feedback">휴대폰번호를 입력해주세요.</div>
+                        </div>
+                        <input type="button" id="telBtn" class="btn" value="인증번호 받기" />
+                     </div>
+
+                     <input type="number" name="certNum" id="certNum" class="number" placeholder="인증번호를 입력하세요." required />
+                     <div class="invalid-feedback">인증번호를 입력해주세요.</div>
+
+                     <label for="chlid-agree" class="form-check-label">
+                        <input type="checkbox" name="chlid-agree" id="chlid-agree" class="form-check-input" />
+                        아동의 보호자로써 만 14세 미만 아동의 가입을 동의합니다.
+                     </label>
+
+                     <input type="button" class="btn next green-btn" value="다음으로" />
+                  </form>
                </div>
             </div>
          </section>
-
-         <footer class="section footer fp-auto-height" id="footer">
-            <div class="footer-wrap">
-               <div class="container d-flex flex-column flex-lg-row justify-content-between top-area">
-                  <div>
-                     <img src="img/ci-logo-1.png" alt="" class="icon" />
-                     <img src="img/ci-logo-2.png" alt="" class="icon" />
-                  </div>
-                  <div>
-                     <a href="4-terms.html" class="btn">서비스이용약관</a>
-                     <a href="4-privacy.html" class="btn">개인정보처리방침</a>
-                     <a href="3-create-account-1.html" class="btn">회원가입</a>
-                     <!-- <a href="2-login.html"></a></li> -->
-                  </div>
-               </div>
-               <p class="copyright">Copyright ⓒ 2023 HANA FINANCIAL GROUP. All rights Reserved.</p>
-            </div>
-         </footer>
       </div>
+
       <!-- jquery -->
       <script src="js/jquery.min.js"></script>
       <!-- bootstrap -->
@@ -140,20 +134,10 @@
             $(".mo-navi-view").hide();
          });
 
-         // 삭제할부분
-         let click = document.querySelector(".unlock");
-         click.addEventListener("click", function () {
-            if (confirm("교육을 위해 로그인이 필요합니다!\n로그인 후 이용 해주세요.") == true) {
-               location.href = "2-login.html";
-            } else {
-               return false;
-            }
+         let next = document.querySelector(".next");
+         next.addEventListener("click", function () {
+            location.href = "3-create-account-3.html";
          });
-         let mov = document.querySelector(".active");
-         mov.addEventListener("click", function () {
-            window.open("https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/view", "_blank");
-         });
-         // 삭제할부분끝
       </script>
    </body>
 </html>

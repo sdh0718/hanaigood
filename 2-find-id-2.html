@@ -34,11 +34,53 @@
                   <li><a href="index.html#p6">참여방법</a></li>
                   <li><a href="1-financial-class.html">금융교실</a></li>
                </ul>
-               <div class="user-area active">
+
+               <i class="mo-navi">
+                  <img class="img-fluid" src="img/[mo]nav-burger.svg" alt="navi" />
+               </i>
+
+               <!-- <div class="user-area active">
                   <a href="2-login.html" class="btn">로그인</a>
+               </div> -->
+               <div class="user-area">
+                  <i><img src="img/nav-login.svg" alt="login" /></i>
+                  <p class="user-name">김하나</p>
+                  <b>어린이</b>
                </div>
             </div>
          </nav>
+
+         <div class="mo-navi-view">
+            <div class="nav-wrap">
+               <aside>
+                  <!-- <a href="2-login.html">
+                     <i><img src="img/[mo]nav-login 1.svg" alt="login-icon" />로그인</i>
+                  </a> -->
+                  <i>
+                     <img src="img/[mo]nav-login 1.svg" alt="login-icon" />
+                     <p class="user-name">김하나</p>
+                     어린이
+                  </i>
+                  <i class="close"><img src="img/[mo]nav-close 1.svg" alt="close-icon" /></i>
+               </aside>
+               <a href="index.html#p1">
+                  <i><img src="img/[mo]nav-icon1 1.svg" alt="nav-icon1" /></i>
+                  캠페인 소개
+               </a>
+               <a href="index.html#p3">
+                  <i><img src="img/[mo]nav-icon2 1.svg" alt="nav-icon2" /></i>
+                  참여현황
+               </a>
+               <a href="index.html#p6">
+                  <i><img src="img/[mo]nav-icon3 1.svg" alt="nav-icon3" /></i>
+                  참여방법
+               </a>
+               <a href="1-financial-class.html">
+                  <i><img src="img/[mo]nav-icon4 1.svg" alt="nav-icon4" /></i>
+                  금융교실
+               </a>
+            </div>
+         </div>
 
          <section class="section login-page">
             <div class="sub-tit">
@@ -50,24 +92,41 @@
             </div>
             <div class="container">
                <div class="cont-box2">
-                  <p>
-                     김하나 어린이의 아이디 <br />
-                     <b>asd**234</b>
-                  </p>
-                  <input type="button" class="btn next green-btn" value="로그인 하기" />
+                  <p class="findid-text"><b>김하나</b> 어린이의 아이디 :</p>
+                  <div class="white-box findid-box">
+                     <b class="user-id">hana1201</b>
+                  </div>
+                  <div class="btn-wrap">
+                     <input type="button" class="btn next green-btn" value="로그인" />
+                     <input type="button" class="btn goto green-btn" value="비밀번호 찾기" />
+                  </div>
                </div>
             </div>
          </section>
       </div>
 
+      <!-- jquery -->
+      <script src="js/jquery.min.js"></script>
       <!-- bootstrap -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
+         $(".mo-navi").click(function () {
+            $(".mo-navi-view").show();
+         });
+         $(".mo-navi-view .close").click(function () {
+            $(".mo-navi-view").hide();
+         });
+
          let next = document.querySelector(".next");
          next.addEventListener("click", function () {
             location.href = "2-login.html";
+         });
+
+         let goto = document.querySelector(".goto");
+         goto.addEventListener("click", function () {
+            location.href = "2-find-pw-1.html";
          });
       </script>
    </body>

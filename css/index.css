@@ -88,11 +88,17 @@ h5 {
    letter-spacing: 0;
 }
 
+a:hover {
+   transition: 0.3s ease-in-out;
+   color: #008d8f;
+}
+
 .cont-box {
    text-align: center;
    background-color: #fdfbef;
    border-radius: 40px;
    padding: 2rem;
+   overflow: hidden;
 }
 .cont-box2 {
    margin: 0 auto;
@@ -126,17 +132,20 @@ section.section .sub-tit p {
    line-height: 1.4em;
    font-weight: 400;
 }
+section.section .sub-tit p span {
+   display: block;
+}
 .green-btn {
    display: inline-block;
-   min-width: 400px;
+   width: 400px;
    margin: 0 auto;
-   padding: 0.8rem 4rem 1rem;
+   padding: 0.8rem 0 1rem;
    font-size: 1.2rem;
    color: white;
    font-weight: 600;
    background-color: #008d8f;
    border-radius: 50px;
-   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
 }
 .green-btn:hover {
    color: white;
@@ -153,7 +162,7 @@ nav.menu {
    width: 100%;
    height: 76px;
    background-color: #5eccc6;
-   z-index: 98;
+   z-index: 97;
 }
 
 .fp-viewing-p0 #menu {
@@ -233,6 +242,53 @@ nav.menu .user-area * {
    margin-right: 3px;
    letter-spacing: -1px;
 }
+
+.popup {
+   position: fixed;
+   z-index: 99;
+   width: 100vw;
+   height: 100vh;
+   padding: 3rem;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: none;
+}
+
+.popup .request-wrap {
+   position: relative;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 2rem;
+   background-color: white;
+   border-radius: 20px;
+   max-width: 1000px;
+   min-height: 600px;
+   margin: 0 auto;
+}
+
+.popup.request .close {
+   position: absolute;
+   right: 3%;
+   top: 3%;
+   width: 26px;
+   cursor: pointer;
+}
+.popup.request h3 {
+   font-size: 2rem;
+   padding: 2rem 0;
+}
+.popup.request .delete-me {
+   width: 100%;
+   height: 50vh;
+   background-color: #999;
+}
+.popup.request a.tel-num {
+   padding: 2rem;
+   font-size: 1.2rem;
+   font-weight: 600;
+}
+
 /* ====================================================================================================== 
 ================================================== main =================================================
 ========================================================================================================= */
@@ -530,7 +586,7 @@ section.sec2 .t-box {
    border-radius: 20px;
    background-color: white;
    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
-   padding: 2rem;
+   padding: 2rem 1rem;
 }
 section.sec2 .t-box h6 {
    font-weight: 600;
@@ -547,30 +603,84 @@ section.sec2 .t-box p {
 ================================================== sec3 =================================================
 ========================================================================================================= */
 
-section.sec3 .swiper-container {
-   padding: 3rem 1rem;
-   width: 90%;
-}
-section.sec3 .swiper-container .swiper-slide {
-   z-index: 1;
-   padding: 2rem;
-   border-radius: 20px;
-   transition: 0.5s;
-   background-color: white;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-section.sec3 .swiper-container .swiper-slide-active {
-   z-index: 9;
-   opacity: 1;
-   transform: scale(1.2);
+section.sec3 .cont-wrap {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+   padding: 3rem;
 }
 
-section.sec3 .swiper-container .swiper-slide h6 {
-   text-align: center;
-   font-size: 1.2rem;
-   padding-bottom: 2rem;
-   font-weight: 600;
+section.sec3 .cont-wrap .cont {
+   position: relative;
+   margin: 0 -2.5%;
+   background-color: white;
+   border-radius: 20px;
 }
+section.sec3 .cont-wrap .cont h6 {
+   width: 100%;
+   height: 60px;
+   backdrop-filter: blur(3px);
+   background-color: rgba(0, 0, 0, 0.5);
+   font-size: 1rem;
+   text-align: center;
+   padding-top: 2rem;
+   color: white;
+   font-weight: 600;
+   border-radius: 20px 20px 0 0;
+}
+
+section.sec3 .cont::after {
+   position: absolute;
+   content: "";
+}
+section.sec3 .cont1 {
+   background-image: url(../img/3.sec3-slide-bak1.png);
+   background-size: cover;
+   min-height: 250px;
+   width: 30%;
+}
+section.sec3 .cont2 {
+   background-image: url(../img/3.sec3-slide-bak2.png);
+   background-size: cover;
+   z-index: 1;
+   min-height: 300px;
+   width: 40%;
+}
+section.sec3 .cont3 {
+   background-image: url(../img/3.sec3-slide-bak3.png);
+   background-size: cover;
+   min-height: 250px;
+   width: 30%;
+}
+section.sec3 .cont1::after {
+   background-image: url(../img/3.sec3-img1.png);
+   background-repeat: no-repeat;
+   background-size: 80% 80%;
+   width: 350px;
+   height: 200px;
+   bottom: -35%;
+   left: -30%;
+}
+section.sec3 .cont2::after {
+   background-image: url(../img/3.sec3-img2.png);
+   background-repeat: no-repeat;
+   background-size: 80% 80%;
+   width: 350px;
+   height: 200px;
+   bottom: -25%;
+   right: -30%;
+}
+section.sec3 .cont3::after {
+   background-image: url(../img/3.sec3-img3.png);
+   background-repeat: no-repeat;
+   background-size: 60% 60%;
+   width: 350px;
+   height: 200px;
+   top: -40%;
+   right: -60%;
+}
+
 section.sec3 .t-area {
    padding: 2rem 0;
 }
@@ -632,7 +742,7 @@ section.sec6 ul.how-area li::after {
    width: 54px;
    height: 54px;
    background-color: #ffc72c;
-   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
    border-radius: 50%;
    font-size: 1.6rem;
    line-height: 54px;
@@ -785,8 +895,38 @@ section.financial-class .finish-area p {
    background-position: center center;
    background-size: auto;
 }
+.login .green-btn {
+   display: inline-block;
+   width: 300px;
+   margin: 0 auto;
+   padding: 0.6rem 0 0.8rem;
+}
+.login .next {
+   background-color: #a5a5a5;
+}
+.login .next.active {
+   background-color: #008d8f;
+}
 
+.login .white-box {
+   padding: 1rem;
+   background: white;
+   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.16);
+   border-radius: 10px;
+}
+.login .cont-box2 > p {
+   text-align: left;
+   max-width: 600px;
+   margin: 0 auto;
+   padding-top: 2rem;
+   font-size: 1.1rem;
+   line-height: 1.4em;
+}
+.login .cont-box2 > p b {
+   font-weight: 600;
+}
 .login section.login-page form {
+   text-align: left;
    max-width: 600px;
    margin: 0 auto;
    padding-top: 2rem;
@@ -795,28 +935,105 @@ section.financial-class .finish-area p {
    max-width: 400px;
    text-align: left;
 }
-.login section.login-page form input[type="text"],
-.login section.login-page form input[type="date"],
-.login section.login-page form input[type="password"] {
-   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
-   padding: 4px;
-   font-size: 1.1rem;
-   border: none;
+.login .agree-wrap p {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
    margin-bottom: 1rem;
 }
-.login section.login-page form input[type="checkbox"] {
-   margin: 0;
+
+.login .agree-wrap p:last-child {
+   margin-bottom: 0;
+}
+
+.login .agree-wrap p a {
+   color: #999;
+   text-decoration: underline;
+   text-underline-position: under;
+}
+.login form label {
+   letter-spacing: 0px;
+}
+.login form input::placeholder {
+   color: #bcbcbc;
+}
+.login form input[type="text"],
+.login form input[type="number"],
+.login form input[type="date"],
+.login form input[type="password"] {
+   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
+   margin-bottom: 1rem;
+   padding: 0.5rem 1rem;
+   border: none;
+   font-size: 1.1rem;
+   border-radius: 10px;
+}
+.login form input[type="checkbox"] {
+   margin-top: 1px;
+   margin-right: 4px;
    width: 1.1rem;
    height: 1.1rem;
 }
-.login section.login-page form input[type="button"] {
+.login form input.green-btn {
    margin: 2rem auto;
 }
-.login section.login-page form input::placeholder {
-   color: #999;
+.login form .tel-wrap {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
 }
-.login section.login-page .service {
+.login form .tel-wrap div {
+   width: 70%;
+}
+.login form .tel-wrap input {
+   width: 100%;
+}
+.login form .tel-wrap .btn {
+   width: 30%;
+   min-width: 120px;
+   margin-bottom: 1rem;
+   margin-left: 0.5rem;
+   background-color: #008d8f;
+   color: white;
+   font-weight: 600;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+.login form.user-area label {
+   color: #908d8d;
+   margin-bottom: 0.5rem;
+}
+.login .service {
    margin-top: 1rem;
+}
+.form-check-input:checked {
+   background-color: #008d8f;
+   border-color: #008d8f;
+}
+.login .cont-box2 > p.findid-text {
+   text-align: center;
+   margin-bottom: 2rem;
+}
+.login .findid-box {
+   margin: 0 auto;
+   max-width: 400px;
+   font-size: 1.6rem;
+   font-weight: 600;
+   text-align: center;
+}
+.login .btn-wrap {
+   max-width: 600px;
+   margin: 0 auto;
+   padding-top: 3rem;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   justify-content: space-around;
+}
+.login .btn-wrap .btn {
+   width: 250px;
+   margin: 0 6px;
 }
 
 /* ====================================================================================================== 
@@ -879,6 +1096,9 @@ section.financial-class .finish-area p {
 ========================================== 992px / container-lg ========================================
 ========================================================================================================= */
 @media (max-width: 992px) {
+   body {
+      word-break: keep-all;
+   }
    nav.menu {
       height: 60px;
    }
@@ -894,15 +1114,15 @@ section.financial-class .finish-area p {
       display: block;
    }
    nav.menu .mo-navi img {
-      height: 30px;
+      width: 30px;
    }
 
    .mo-navi-view {
-      z-index: 99;
+      z-index: 98;
       position: fixed;
       height: 100vh;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.16);
    }
    .mo-navi-view .nav-wrap {
       display: flex;
@@ -929,17 +1149,39 @@ section.financial-class .finish-area p {
       display: inline-block;
    }
    .mo-navi-view .nav-wrap > a {
+      font-size: 1.2rem;
       margin-bottom: 1rem;
       padding: 0 1rem;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
    }
-
+   .mo-navi-view .nav-wrap aside i {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      color: #008d8f;
+      font-weight: 600;
+   }
+   .mo-navi-view .nav-wrap aside i p {
+      color: #4d4d4d;
+      margin-right: 4px;
+   }
+   .mo-navi-view .nav-wrap i {
+      display: inline-block;
+      margin-right: 4px;
+   }
+   .mo-navi-view .nav-wrap i.close {
+      margin: 0;
+   }
+   .mo-navi-view .nav-wrap i img {
+      height: 40px;
+   }
    /* ============================================================================= */
    .cont-box {
       background-color: unset;
    }
    .green-btn {
-      min-width: unset;
-      max-width: 400px;
       width: 92%;
       margin: 0 auto;
       padding: 0.6rem 0;
@@ -1013,9 +1255,32 @@ section.financial-class .finish-area p {
       font-size: 0.9rem;
    }
    /* ============================================================================= */
-   section.sec3 .swiper-container {
-      padding: 3rem 1rem;
-      width: 100%;
+   section.sec3 .cont-wrap {
+      padding: 0;
+   }
+   section.sec3 .cont-wrap .cont {
+      margin: 0 auto;
+      width: 80%;
+      max-width: 400px;
+      z-index: 0;
+      margin-bottom: 2rem;
+   }
+
+   section.sec3 .cont-wrap .cont::after {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 200px;
+      height: 120px;
+      background-size: 100%;
+   }
+
+   section.sec3 .cont-wrap .cont1::after,
+   section.sec3 .cont-wrap .cont2::after,
+   section.sec3 .cont-wrap .cont3::after {
+      top: 65%;
+      left: 70%;
    }
    section.sec3 .t-area p {
       font-size: 0.9rem;
@@ -1037,6 +1302,45 @@ section.financial-class .finish-area p {
       width: 100%;
       margin: 1rem auto;
    }
+   /* ============================================================================= */
+   footer.footer .top-area {
+      padding-left: 0.5rem;
+      flex-flow: column-reverse !important;
+   }
+   footer.footer p.copyright {
+      padding: 0rem 1rem;
+      padding-top: 4rem;
+      font-size: 0.9rem;
+      line-height: 1.2em;
+   }
+   /* ============================================================================= */
+
+   .login form input[type="text"],
+   .login form input[type="number"],
+   .login form input[type="date"],
+   .login form input[type="password"] {
+      font-size: 1rem;
+      padding: 0.5rem;
+   }
+   .login form label {
+      line-height: 1.3em;
+   }
+   .login section.section .sub-tit {
+      padding-bottom: 2rem;
+   }
+   .login .cont-box2 > p {
+      padding: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+   }
+   .cont-box2 {
+      border-radius: 20px;
+      padding: 2rem 1rem 4rem 1rem;
+      min-height: unset;
+   }
+   .login section.login-page form {
+      padding: 0;
+   }
 }
 
 /* ====================================================================================================== 
@@ -1053,14 +1357,37 @@ section.financial-class .finish-area p {
 ========================================== 992px / container-sm ========================================
 ========================================================================================================= */
 @media (max-width: 576px) {
+   section.section .sub-tit p span {
+      display: inline;
+   }
    section.sec0 .text-area h2 {
       font-size: 1.1rem;
    }
    section.sec0 .text-area h1 {
       font-size: 2.6rem;
    }
-
    section.sec6 ul.how-area li {
+      width: 80%;
+      padding: 1rem;
+      padding-top: 3rem;
+   }
+   section.sec6 ul.how-area li p {
+      font-size: 0.9rem;
+      padding-bottom: 1rem;
+   }
+   section.sec6 ul.how-area li img {
+      width: 80%;
+   }
+}
+
+@media (max-width: 400px) {
+   section.sec3 .cont-wrap .cont {
       width: 90%;
+   }
+   section.sec3 .cont-wrap .cont1::after,
+   section.sec3 .cont-wrap .cont2::after,
+   section.sec3 .cont-wrap .cont3::after {
+      top: 65%;
+      left: 50%;
    }
 }

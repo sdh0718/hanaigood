@@ -124,4 +124,24 @@ table {
    border-collapse: collapse;
    border-spacing: 0;
 }
-
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="date"]::-webkit-datetime-edit-text {
+   -webkit-appearance: none;
+   display: none;
+}
+input[type="date"]::-webkit-datetime-edit-month-field {
+   -webkit-appearance: none;
+   display: none;
+}
+input[type="date"]::-webkit-datetime-edit-day-field {
+   -webkit-appearance: none;
+   display: none;
+}
+input[type="date"]::-webkit-datetime-edit-year-field {
+   -webkit-appearance: none;
+   display: none;
+}
