@@ -116,6 +116,7 @@ section.section {
    background-repeat: no-repeat;
    background-position: right center;
    background-size: 60% 100%;
+   padding-top: 50px;
 }
 
 section.section .sub-tit {
@@ -132,8 +133,12 @@ section.section .sub-tit p {
    line-height: 1.4em;
    font-weight: 400;
 }
+section.section .sub-tit p b {
+   display: inline;
+}
 section.section .sub-tit p span {
    display: block;
+   padding: 0;
 }
 .green-btn {
    display: inline-block;
@@ -149,6 +154,10 @@ section.section .sub-tit p span {
 }
 .green-btn:hover {
    color: white;
+}
+.mo-img,
+.mo-dotted {
+   display: none;
 }
 
 /* ====================================================================================================== 
@@ -271,11 +280,17 @@ nav.menu .user-area * {
    position: absolute;
    right: 3%;
    top: 3%;
-   width: 26px;
+   display: block;
+   width: 40px;
+   height: 40px;
    cursor: pointer;
+}
+.popup.request .close img {
+   width: 100%;
 }
 .popup.request h3 {
    font-size: 2rem;
+   line-height: 1.2em;
    padding: 2rem 0;
 }
 .popup.request .delete-me {
@@ -292,6 +307,9 @@ nav.menu .user-area * {
 /* ====================================================================================================== 
 ================================================== main =================================================
 ========================================================================================================= */
+section.sec0 {
+   padding-top: 0;
+}
 section.sec0 .mo-img-area {
    display: none;
 }
@@ -539,12 +557,12 @@ section.sec1 .top-area ul li:nth-child(2n + 1) {
    background-color: white;
    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
    height: 100%;
-   padding: 2rem;
+   padding: 2rem 1rem;
    padding-bottom: 0;
 }
 section.sec1 .top-area ul li:nth-child(2n + 1) img {
    display: block;
-   width: 100%;
+   width: 80%;
    margin: 0 auto;
 }
 section.sec1 .top-area ul li:nth-child(2n + 1) p {
@@ -610,7 +628,6 @@ section.sec3 .cont-wrap {
    align-items: center;
    padding: 3rem;
 }
-
 section.sec3 .cont-wrap .cont {
    position: relative;
    margin: 0 -2.5%;
@@ -638,6 +655,7 @@ section.sec3 .cont1 {
    background-image: url(../img/3.sec3-slide-bak1.png);
    background-size: cover;
    min-height: 250px;
+   max-width: 300px;
    width: 30%;
 }
 section.sec3 .cont2 {
@@ -645,44 +663,45 @@ section.sec3 .cont2 {
    background-size: cover;
    z-index: 1;
    min-height: 300px;
+   max-width: 400px;
    width: 40%;
 }
 section.sec3 .cont3 {
    background-image: url(../img/3.sec3-slide-bak3.png);
    background-size: cover;
    min-height: 250px;
+   max-width: 300px;
    width: 30%;
 }
 section.sec3 .cont1::after {
    background-image: url(../img/3.sec3-img1.png);
    background-repeat: no-repeat;
-   background-size: 80% 80%;
-   width: 350px;
-   height: 200px;
-   bottom: -35%;
+   background-size: 100% 100%;
+   width: 260px;
+   height: 150px;
+   bottom: -10%;
    left: -30%;
 }
 section.sec3 .cont2::after {
    background-image: url(../img/3.sec3-img2.png);
    background-repeat: no-repeat;
-   background-size: 80% 80%;
-   width: 350px;
-   height: 200px;
-   bottom: -25%;
-   right: -30%;
+   background-size: 100% 100%;
+   width: 260px;
+   height: 150px;
+   bottom: -10%;
+   right: -10%;
 }
 section.sec3 .cont3::after {
    background-image: url(../img/3.sec3-img3.png);
    background-repeat: no-repeat;
-   background-size: 60% 60%;
-   width: 350px;
-   height: 200px;
-   top: -40%;
-   right: -60%;
+   background-size: 80% 80%;
+   width: 260px;
+   height: 150px;
+   top: -38%;
+   right: -40%;
 }
-
 section.sec3 .t-area {
-   padding: 2rem 0;
+   padding: 1rem 0 2rem;
 }
 section.sec3 .t-area p {
    text-align: center;
@@ -699,14 +718,15 @@ section.sec3 .t-area p b {
 ================================================== sec4,5 ================================================
 ========================================================================================================= */
 
-section.sec4 img,
-section.sec5 img {
+section.sec4 .cont-box img,
+section.sec5 .cont-box img {
    display: block;
    margin: 0.5%;
    width: 20%;
    border-radius: 20px;
 }
-section.sec5 .sub-tit p b {
+section.sec5 .sub-tit p span {
+   display: inline;
    font-size: 1.2rem;
    font-weight: 600;
 }
@@ -750,16 +770,16 @@ section.sec6 ul.how-area li::after {
    color: white;
    font-weight: 600;
 }
-section.sec6 ul.how-area li:nth-child(1):after {
+section.sec6 ul.how-area li.cont1:after {
    content: "1";
 }
-section.sec6 ul.how-area li:nth-child(2):after {
+section.sec6 ul.how-area li.cont2:after {
    content: "2";
 }
-section.sec6 ul.how-area li:nth-child(3):after {
+section.sec6 ul.how-area li.cont3:after {
    content: "3";
 }
-section.sec6 ul.how-area li:nth-child(4):after {
+section.sec6 ul.how-area li.cont4:after {
    content: "4";
 }
 section.sec6 ul.how-area li p {
@@ -767,6 +787,10 @@ section.sec6 ul.how-area li p {
    font-size: 1.1rem;
    line-height: 1.3em;
    padding-bottom: 2rem;
+   font-weight: 600;
+}
+section.sec6 ul.how-area li p b {
+   display: block;
 }
 section.sec6 .btn {
    margin: 1rem auto 2rem;
@@ -976,7 +1000,7 @@ section.financial-class .finish-area p {
    height: 1.1rem;
 }
 .login form input.green-btn {
-   margin: 2rem auto;
+   margin: 4rem auto 2rem;
 }
 .login form .tel-wrap {
    display: flex;
@@ -1012,8 +1036,13 @@ section.financial-class .finish-area p {
    border-color: #008d8f;
 }
 .login .cont-box2 > p.findid-text {
+   font-size: 1.4rem;
    text-align: center;
    margin-bottom: 2rem;
+   letter-spacing: -0.5px;
+}
+.login .cont-box2 > p.findid-text b {
+   font-size: 1.4rem;
 }
 .login .findid-box {
    margin: 0 auto;
@@ -1021,6 +1050,7 @@ section.financial-class .finish-area p {
    font-size: 1.6rem;
    font-weight: 600;
    text-align: center;
+   padding: 3rem 0;
 }
 .login .btn-wrap {
    max-width: 600px;
@@ -1060,6 +1090,9 @@ section.financial-class .finish-area p {
 ========================================== 1200px / container-xl ========================================
 ========================================================================================================= */
 @media (max-width: 1200px) {
+   body {
+      word-break: keep-all;
+   }
    section.sec0 .text-area {
       min-width: unset;
       width: 100%;
@@ -1090,14 +1123,42 @@ section.financial-class .finish-area p {
       padding-right: 1rem;
       font-size: 1rem;
    }
+   section.sec1 .top-area ul li:nth-child(2n) {
+      padding: 0 0.5rem;
+   }
+   section.sec1 p span {
+      font-size: 1rem;
+   }
+   section.sec1 p b {
+      font-size: 1.1rem;
+   }
+   section.sec1 .bottom-area p {
+      padding-left: 1rem;
+   }
+
+   section.sec2 .t-box h6 {
+      font-size: 1.2rem;
+   }
+   section.sec2 .t-box p {
+      font-size: 0.9rem;
+      line-height: 1.3em;
+   }
+   section.sec3 .cont-wrap .cont {
+      margin: 0 -1.5%;
+   }
 }
 
+/* ====================================================================================================== 
+========================================== 1024px / container ========================================
+========================================================================================================= */
+@media (max-width: 1024px) {
+}
 /* ====================================================================================================== 
 ========================================== 992px / container-lg ========================================
 ========================================================================================================= */
 @media (max-width: 992px) {
-   body {
-      word-break: keep-all;
+   nav.menu .container {
+      max-width: unset;
    }
    nav.menu {
       height: 60px;
@@ -1116,7 +1177,7 @@ section.financial-class .finish-area p {
    nav.menu .mo-navi img {
       width: 30px;
    }
-
+   /* ============================================================================= */
    .mo-navi-view {
       z-index: 98;
       position: fixed;
@@ -1176,6 +1237,7 @@ section.financial-class .finish-area p {
    }
    .mo-navi-view .nav-wrap i img {
       height: 40px;
+      margin-right: 4px;
    }
    /* ============================================================================= */
    .cont-box {
@@ -1184,25 +1246,39 @@ section.financial-class .finish-area p {
    .green-btn {
       width: 92%;
       margin: 0 auto;
-      padding: 0.6rem 0;
-      font-size: 1rem;
+      padding: 0.8rem 0 1rem;
+   }
+   .mo-dotted {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+   }
+   .mo-dotted li {
+      margin-right: 1rem;
+   }
+   .mo-dotted li:last-child {
+      margin: 0;
+   }
+   .mo-img {
+      display: block;
+      margin: 0 auto;
+      width: 42px;
+      padding: 2rem 0 1.5rem;
    }
    section.section {
       background-image: unset;
-      padding: 2rem 0;
+      padding: 4rem 0 0;
    }
    section.section .sub-tit {
       text-align: center;
       padding: 2rem 1rem 1rem;
    }
-   section.section .sub-tit h2 {
-      font-size: 1.6rem;
-   }
-   section.section .sub-tit p {
-      font-size: 0.9rem;
-      line-height: 1.2em;
-   }
    /* ============================================================================= */
+   section.sec0 {
+      padding-top: 2rem;
+   }
    section.sec0 .cont-area,
    section.sec0 .logo-area {
       height: unset;
@@ -1228,16 +1304,20 @@ section.financial-class .finish-area p {
    section.sec1 .top-area ul li {
       margin: 0.5rem 0;
    }
+   section.sec1 .top-area ul li:nth-child(2n + 1) {
+      width: 80%;
+      max-width: 400px;
+   }
    section.sec1 p span {
-      font-size: 0.9rem;
-      padding-bottom: 0.5rem;
+      font-size: 1.1rem;
    }
    section.sec1 p b {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: 600;
    }
    section.sec1 .bottom-area img {
       margin: 2rem 0;
+      max-height: 200px;
    }
    section.sec1 .bottom-area p {
       padding: 0;
@@ -1248,11 +1328,9 @@ section.financial-class .finish-area p {
    }
    section.sec2 .t-box {
       margin: 0 auto;
+      width: 100%;
       max-width: 400px;
       padding: 2rem 0.5rem;
-   }
-   section.sec2 .t-box p {
-      font-size: 0.9rem;
    }
    /* ============================================================================= */
    section.sec3 .cont-wrap {
@@ -1262,10 +1340,10 @@ section.financial-class .finish-area p {
       margin: 0 auto;
       width: 80%;
       max-width: 400px;
+      min-height: unset;
+      height: 300px;
       z-index: 0;
-      margin-bottom: 2rem;
    }
-
    section.sec3 .cont-wrap .cont::after {
       top: 0;
       left: 0;
@@ -1275,19 +1353,19 @@ section.financial-class .finish-area p {
       height: 120px;
       background-size: 100%;
    }
-
    section.sec3 .cont-wrap .cont1::after,
    section.sec3 .cont-wrap .cont2::after,
    section.sec3 .cont-wrap .cont3::after {
-      top: 65%;
-      left: 70%;
+      top: 70%;
+      left: 60%;
    }
-   section.sec3 .t-area p {
-      font-size: 0.9rem;
+   section.sec3 .cont-wrap .cont h6 {
+      height: 50px;
+      padding: 1rem 0;
    }
    /* ============================================================================= */
-   section.sec4 img,
-   section.sec5 img {
+   section.sec4 .cont-box img,
+   section.sec5 .cont-box img {
       width: 40%;
       margin: 1%;
    }
@@ -1297,12 +1375,23 @@ section.financial-class .finish-area p {
       max-width: 400px;
       margin: 1rem auto;
    }
+   section.sec6 ul.how-area li::after {
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+      font-size: 1.3rem;
+      left: 10%;
+      transform: unset;
+   }
    /* ============================================================================= */
    section.financial-class ul.mov-area li {
       width: 100%;
       margin: 1rem auto;
    }
    /* ============================================================================= */
+   footer.footer {
+      padding-top: 6rem;
+   }
    footer.footer .top-area {
       padding-left: 0.5rem;
       flex-flow: column-reverse !important;
@@ -1310,11 +1399,200 @@ section.financial-class .finish-area p {
    footer.footer p.copyright {
       padding: 0rem 1rem;
       padding-top: 4rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       line-height: 1.2em;
    }
    /* ============================================================================= */
+   .login section.login-page {
+      background-image: none;
+   }
+   .cont-box2 {
+      max-width: 600px;
+      background-color: #fefcf6;
+   }
+   .login form .tel-wrap,
+   .login .btn-wrap,
+   .login .agree-wrap p {
+      flex-flow: column nowrap;
+   }
+   .login .agree-wrap p {
+      align-items: flex-start;
+      justify-content: flex-start;
+   }
+   .login .agree-wrap p a {
+      margin-left: 1rem;
+   }
+   .login .cont-box2 > p b {
+      font-size: 1.2rem;
+   }
+   .login form .tel-wrap div {
+      width: 100%;
+   }
+   .login form .tel-wrap .btn {
+      margin: 1rem auto 2rem;
+      width: 100%;
+      max-width: 260px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      padding: 0.4rem 0 0.6rem;
+   }
+   .login .btn-wrap .btn {
+      margin-bottom: 1rem;
+   }
+   .login section.section .sub-tit {
+      padding-bottom: 2rem;
+   }
+   .login .cont-box2 > p {
+      padding: 0;
+      padding-left: 0.5rem;
+      margin-bottom: 2rem;
+   }
+   .cont-box2 {
+      border-radius: 20px;
+      padding: 2rem 1rem 4rem 1rem;
+      min-height: unset;
+   }
+   .login section.login-page form {
+      padding: 0;
+   }
+   .login form input[type="text"],
+   .login form input[type="number"],
+   .login form input[type="date"],
+   .login form input[type="password"],
+   .login .findid-box,
+   .login .white-box {
+      border-radius: 0;
+   }
+   .login .agree-wrap {
+      padding: 0;
+      background: unset;
+      box-shadow: unset;
+   }
+   .login .child-agree {
+      margin-top: 1rem;
+   }
+   .login .gotologin {
+      margin: 6rem 0;
+   }
+}
 
+/* ====================================================================================================== 
+========================================== 768px / container-md ========================================
+========================================================================================================= */
+@media (max-width: 768px) {
+   .popup {
+      padding: 3rem 0.5rem;
+   }
+   .popup .request-wrap {
+      padding: 1rem;
+   }
+   .popup.request img {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+   }
+   .popup.request .close {
+      right: 16px;
+      top: 16px;
+      width: 30px;
+      height: 30px;
+   }
+   .popup.request h3 {
+      text-align: center;
+      font-size: 1.6rem;
+   }
+
+   section.sec4 .cont-box img,
+   section.sec5 .cont-box img {
+      width: 48%;
+   }
+}
+
+/* ====================================================================================================== 
+========================================== 576px / container-sm ========================================
+========================================================================================================= */
+@media (max-width: 576px) {
+   .green-btn {
+      width: 100%;
+   }
+   section.section .sub-tit h2 {
+      font-size: 2.2rem;
+      line-height: 1.2em;
+   }
+   section.section .sub-tit h2 b {
+      display: block;
+   }
+   section.section .sub-tit p {
+      font-size: 1rem;
+      line-height: 1.4em;
+   }
+   section.section .sub-tit p b {
+      display: block;
+   }
+   section.section .sub-tit p span {
+      display: inline;
+   }
+   section.sec0 .text-area h2 {
+      font-size: 1.1rem;
+   }
+   section.sec0 .text-area h1 {
+      font-size: 2.6rem;
+   }
+   section.sec1 p span {
+      font-size: 0.9rem;
+      padding-bottom: 0.5rem;
+   }
+   section.sec1 p b {
+      font-size: 1.1rem;
+      font-weight: 600;
+   }
+   section.sec2 .t-box p {
+      font-size: 0.9rem;
+   }
+   section.sec3 .t-area p {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+   }
+   section.sec3 .cont-wrap .cont {
+      height: 200px;
+   }
+   section.sec3 .cont-wrap .cont::after {
+      width: 180px;
+      height: 110px;
+   }
+   section.sec3 .cont-wrap .cont1::after {
+      top: 55%;
+      left: 55%;
+   }
+   section.sec3 .cont-wrap .cont2::after,
+   section.sec3 .cont-wrap .cont3::after {
+      top: 55%;
+      left: 45%;
+   }
+
+   section.sec6 ul.how-area {
+      padding: 0;
+   }
+   section.sec6 ul.how-area li {
+      width: 80%;
+      padding: 1rem;
+      padding-top: 2rem;
+   }
+   section.sec6 ul.how-area li p {
+      font-size: 0.9rem;
+      padding-bottom: 1rem;
+   }
+   section.sec6 ul.how-area li p b {
+      display: inline;
+   }
+   section.sec6 ul.how-area li img {
+      width: 70%;
+   }
+   section.sec6 .mo-img {
+      padding: 0;
+   }
+
+   /* ============================================================================= */
    .login form input[type="text"],
    .login form input[type="number"],
    .login form input[type="date"],
@@ -1325,69 +1603,22 @@ section.financial-class .finish-area p {
    .login form label {
       line-height: 1.3em;
    }
-   .login section.section .sub-tit {
-      padding-bottom: 2rem;
-   }
    .login .cont-box2 > p {
-      padding: 0;
-      margin-bottom: 1rem;
       font-size: 1rem;
    }
-   .cont-box2 {
-      border-radius: 20px;
-      padding: 2rem 1rem 4rem 1rem;
-      min-height: unset;
-   }
-   .login section.login-page form {
-      padding: 0;
-   }
 }
-
 /* ====================================================================================================== 
-========================================== 992px / container-md ========================================
+========================================== 400px / container- ========================================
 ========================================================================================================= */
-@media (max-width: 768px) {
-   section.sec4 img,
-   section.sec5 img {
-      width: 48%;
-   }
-}
-
-/* ====================================================================================================== 
-========================================== 992px / container-sm ========================================
-========================================================================================================= */
-@media (max-width: 576px) {
-   section.section .sub-tit p span {
-      display: inline;
-   }
-   section.sec0 .text-area h2 {
-      font-size: 1.1rem;
-   }
-   section.sec0 .text-area h1 {
-      font-size: 2.6rem;
-   }
-   section.sec6 ul.how-area li {
-      width: 80%;
-      padding: 1rem;
-      padding-top: 3rem;
-   }
-   section.sec6 ul.how-area li p {
-      font-size: 0.9rem;
-      padding-bottom: 1rem;
-   }
-   section.sec6 ul.how-area li img {
-      width: 80%;
-   }
-}
 
 @media (max-width: 400px) {
-   section.sec3 .cont-wrap .cont {
-      width: 90%;
+   section.sec2 .cont-area img {
+      width: 80%;
+      padding-bottom: 1rem;
    }
-   section.sec3 .cont-wrap .cont1::after,
-   section.sec3 .cont-wrap .cont2::after,
-   section.sec3 .cont-wrap .cont3::after {
-      top: 65%;
-      left: 50%;
+   section.sec1 .top-area ul li:nth-child(2n + 1),
+   section.sec6 ul.how-area li,
+   section.sec3 .cont-wrap .cont {
+      width: 100%;
    }
 }

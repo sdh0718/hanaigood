@@ -54,29 +54,29 @@
             <div class="nav-wrap">
                <aside>
                   <!-- <a href="2-login.html">
-                     <i><img src="img/[mo]nav-login 1.svg" alt="login-icon" />로그인</i>
+                     <i><img src="img/[mo]nav-login-1.png" alt="login-icon" />로그인</i>
                   </a> -->
                   <i>
-                     <img src="img/[mo]nav-login 1.svg" alt="login-icon" />
+                     <img src="img/[mo]nav-login-1.png" alt="login-icon" />
                      <p class="user-name">김하나</p>
                      어린이
                   </i>
-                  <i class="close"><img src="img/[mo]nav-close 1.svg" alt="close-icon" /></i>
+                  <i class="close"><img src="img/[mo]nav-close.svg" alt="close-icon" /></i>
                </aside>
                <a href="index.html#p1">
-                  <i><img src="img/[mo]nav-icon1 1.svg" alt="nav-icon1" /></i>
+                  <i><img src="img/[mo]nav-icon1.svg" alt="nav-icon1" /></i>
                   캠페인 소개
                </a>
                <a href="index.html#p3">
-                  <i><img src="img/[mo]nav-icon2 1.svg" alt="nav-icon2" /></i>
+                  <i><img src="img/[mo]nav-icon2.svg" alt="nav-icon2" /></i>
                   참여현황
                </a>
                <a href="index.html#p6">
-                  <i><img src="img/[mo]nav-icon3 1.svg" alt="nav-icon3" /></i>
+                  <i><img src="img/[mo]nav-icon3.svg" alt="nav-icon3" /></i>
                   참여방법
                </a>
                <a href="1-financial-class.html">
-                  <i><img src="img/[mo]nav-icon4 1.svg" alt="nav-icon4" /></i>
+                  <i><img src="img/[mo]nav-icon4.svg" alt="nav-icon4" /></i>
                   금융교실
                </a>
             </div>
@@ -84,10 +84,10 @@
 
          <section class="section login-page">
             <div class="sub-tit">
-               <h2>회원가입</h2>
+               <h2>어서오세요!</h2>
                <p>
                   하나 아이착한 금융교육은 <br />
-                  만 14세 미만 아동을 대상으로 하는 금융교육 프로그램입니다.
+                  만 14세 미만 아동을 대상으로 하는 <b></b>금융교육 프로그램입니다.
                </p>
             </div>
             <div class="container">
@@ -108,7 +108,7 @@
                      <input type="number" name="certNum" id="certNum" class="number" placeholder="인증번호를 입력하세요." required />
                      <div class="invalid-feedback">인증번호를 입력해주세요.</div>
 
-                     <label for="chlid-agree" class="form-check-label">
+                     <label for="chlid-agree" class="child-agree form-check-label">
                         <input type="checkbox" name="chlid-agree" id="chlid-agree" class="form-check-input" />
                         아동의 보호자로써 만 14세 미만 아동의 가입을 동의합니다.
                      </label>
@@ -119,7 +119,6 @@
             </div>
          </section>
       </div>
-
       <!-- jquery -->
       <script src="js/jquery.min.js"></script>
       <!-- bootstrap -->
@@ -127,13 +126,6 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         $(".mo-navi").click(function () {
-            $(".mo-navi-view").show();
-         });
-         $(".mo-navi-view .close").click(function () {
-            $(".mo-navi-view").hide();
-         });
-
          let next = document.querySelector(".next");
          next.addEventListener("click", function () {
             location.href = "3-create-account-3.html";

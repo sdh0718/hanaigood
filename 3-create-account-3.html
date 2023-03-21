@@ -54,29 +54,29 @@
             <div class="nav-wrap">
                <aside>
                   <!-- <a href="2-login.html">
-                     <i><img src="img/[mo]nav-login 1.svg" alt="login-icon" />로그인</i>
+                     <i><img src="img/[mo]nav-login-1.png" alt="login-icon" />로그인</i>
                   </a> -->
                   <i>
-                     <img src="img/[mo]nav-login 1.svg" alt="login-icon" />
+                     <img src="img/[mo]nav-login-1.png" alt="login-icon" />
                      <p class="user-name">김하나</p>
                      어린이
                   </i>
-                  <i class="close"><img src="img/[mo]nav-close 1.svg" alt="close-icon" /></i>
+                  <i class="close"><img src="img/[mo]nav-close.svg" alt="close-icon" /></i>
                </aside>
                <a href="index.html#p1">
-                  <i><img src="img/[mo]nav-icon1 1.svg" alt="nav-icon1" /></i>
+                  <i><img src="img/[mo]nav-icon1.svg" alt="nav-icon1" /></i>
                   캠페인 소개
                </a>
                <a href="index.html#p3">
-                  <i><img src="img/[mo]nav-icon2 1.svg" alt="nav-icon2" /></i>
+                  <i><img src="img/[mo]nav-icon2.svg" alt="nav-icon2" /></i>
                   참여현황
                </a>
                <a href="index.html#p6">
-                  <i><img src="img/[mo]nav-icon3 1.svg" alt="nav-icon3" /></i>
+                  <i><img src="img/[mo]nav-icon3.svg" alt="nav-icon3" /></i>
                   참여방법
                </a>
                <a href="1-financial-class.html">
-                  <i><img src="img/[mo]nav-icon4 1.svg" alt="nav-icon4" /></i>
+                  <i><img src="img/[mo]nav-icon4.svg" alt="nav-icon4" /></i>
                   금융교실
                </a>
             </div>
@@ -84,7 +84,7 @@
 
          <section class="section login-page">
             <div class="sub-tit">
-               <h2>회원가입</h2>
+               <h2>어서오세요!</h2>
                <p>
                   하나 아이착한 금융교육에 참여하는<br />
                   어린이의 정보를 입력해주세요.
@@ -120,7 +120,6 @@
             </div>
          </section>
       </div>
-
       <!-- jquery -->
       <script src="js/jquery.min.js"></script>
       <!-- bootstrap -->
@@ -128,13 +127,6 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         $(".mo-navi").click(function () {
-            $(".mo-navi-view").show();
-         });
-         $(".mo-navi-view .close").click(function () {
-            $(".mo-navi-view").hide();
-         });
-
          let click = document.querySelector(".next");
          click.addEventListener("click", function () {
             alert("이미 존재하는 회원정보입니다.\n아이디 찾기를 진행해주세요.");
