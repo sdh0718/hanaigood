@@ -31,19 +31,3 @@ $(window).scroll(function () {
       $(".more-area").fadeOut();
    }
 });
-
-function openChatroom() {
-   var windowWidth = $(window).width();
-
-   if (windowWidth < 992) {
-      $("#topMove").hide();
-   } else {
-      $(window).scroll(function () {
-         if ($(this).scrollTop() > 700) {
-            $("#topMove").fadeIn();
-         } else {
-            $("#topMove").fadeOut();
-         }
-      });
-   }
-}
