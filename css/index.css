@@ -776,12 +776,12 @@ section.financial-class ul.mov-area li {
 section.financial-class ul.mov-area li img {
    border-radius: 20px;
 }
-section.financial-class ul.mov-area li p {
+section.financial-class p.mov-tit {
    height: 50px;
    padding-top: 1rem;
    font-size: 1.1rem;
 }
-section.financial-class ul.mov-area li p b {
+section.financial-class p.mov-tit b {
    font-size: 1.2rem;
    font-weight: 600;
 }
@@ -837,6 +837,157 @@ section.financial-class .finish-area p {
    font-size: 1.1rem;
    line-height: 1.3em;
    padding-bottom: 1.6rem;
+}
+
+/* ====================================================================================================== 
+========================================== 금융교육 영상팝업 ========================================
+========================================================================================================= */
+
+.financial-class .modal {
+   display: none;
+   position: fixed;
+   z-index: 999;
+   left: 0;
+   top: 0;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.8);
+}
+.financial-class .modal-content {
+   position: relative;
+   margin: auto;
+   padding: 0;
+   width: 80%;
+   max-width: 1700px;
+   height: auto;
+}
+.financial-class .video-wrapper {
+   position: relative;
+   height: 0;
+   padding-bottom: 56.25%; /* 16:9 */
+   overflow: hidden;
+}
+.financial-class .video-wrapper iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+/* top-bar */
+.financial-class .top-bar {
+   height: 60px;
+   background-color: #5eccc6;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+}
+.financial-class .top-bar aside {
+   padding: 0 1rem;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: flex-start;
+   align-items: center;
+}
+.financial-class .top-bar aside i {
+   display: block;
+   height: 50px;
+}
+.financial-class .top-bar aside i img {
+   height: 100%;
+}
+.financial-class .top-bar aside * {
+   color: white;
+   padding-right: 1rem;
+}
+
+/* mov-bar */
+.financial-class .movie-bar {
+   width: 100%;
+   height: 60px;
+   background-color: #929292;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 20px;
+   box-sizing: border-box;
+   z-index: 1000;
+}
+
+.financial-class .movie-controls {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100px;
+}
+
+.financial-class button {
+   border: none;
+   background-color: transparent;
+   color: white;
+   font-size: 20px;
+   cursor: pointer;
+   outline: none;
+   padding: 5px;
+}
+
+.financial-class button:hover,
+.financial-class #close-btn:hover {
+   color: #5eccc6;
+}
+
+.financial-class button i,
+.financial-class #close-btn i {
+   font-size: inherit;
+}
+
+.financial-class .movie-progress {
+   position: relative;
+   width: calc(100% - 200px);
+   height: 10px;
+   background-color: white;
+   border-radius: 5px;
+   margin: 0 20px;
+}
+
+.financial-class #progress-bar {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   background-color: #008d8f;
+   border-radius: 5px;
+   width: 0%;
+}
+.financial-class #progress-bar::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: calc(100% - 10px);
+   z-index: 99;
+   height: 10px;
+   width: 16px;
+   background-color: #4d4d4d;
+}
+
+.financial-class #close-btn {
+   border: none;
+   background-color: transparent;
+   color: white;
+   font-size: 30px;
+   cursor: pointer;
+   outline: none;
+   padding: 5px;
+}
+
+section.financial-class .modal .top-bar,
+section.financial-class .modal .movie-bar {
+   display: flex;
 }
 
 /* ====================================================================================================== 
@@ -1021,6 +1172,9 @@ section.financial-class .finish-area p {
 @media (max-width: 1400px) {
    section.sec1 .bottom-area img {
       max-height: 200px;
+   }
+   .financial-class .modal-content {
+      width: 100%;
    }
 }
 
@@ -1347,11 +1501,7 @@ section.financial-class .finish-area p {
       left: 10%;
       transform: unset;
    }
-   /* ============================================================================= */
-   section.financial-class ul.mov-area li {
-      width: 100%;
-      margin: 1rem auto;
-   }
+
    /* ============================================================================= */
    footer.footer {
       padding-top: 6rem;
@@ -1366,6 +1516,17 @@ section.financial-class .finish-area p {
       font-size: 1rem;
       line-height: 1.2em;
    }
+
+   /* ============================================================================= */
+   section.financial-class ul.mov-area li {
+      width: 100%;
+      margin: 1rem auto;
+   }
+   section.financial-class .modal .top-bar,
+   section.financial-class .modal .movie-bar {
+      display: none;
+   }
+
    /* ============================================================================= */
    .login section.login-page {
       background-image: none;
