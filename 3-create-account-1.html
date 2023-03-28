@@ -114,7 +114,7 @@
                            <a class="btn agree2-btn">전문보기</a>
                         </p>
                      </div>
-                     <input type="button" class="btn next green-btn" value="다음으로" />
+                     <input id="b1" type="button" class="btn next green-btn" value="다음으로" />
                   </form>
                </div>
             </div>
@@ -127,8 +127,8 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let next = document.querySelector(".next");
-         next.addEventListener("click", function () {
+         const goto = document.querySelector("#b1");
+         goto.addEventListener("click", () => {
             location.href = "3-create-account-2.html";
          });
       </script>

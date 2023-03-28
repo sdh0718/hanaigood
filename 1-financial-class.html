@@ -136,16 +136,15 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         // 삭제할부분
-         let click = document.querySelector(".unlock");
-         click.addEventListener("click", function () {
-            if (confirm("교육을 위해 로그인이 필요합니다!\n로그인 후 이용 해주세요.") == true) {
+         const conf = document.querySelector(".unlock");
+         conf.addEventListener("click", () => {
+            const shouldLogin = confirm("교육을 위해 로그인이 필요합니다!\n로그인 후 이용 해주세요.");
+            if (shouldLogin) {
                location.href = "2-login.html";
             } else {
                return false;
             }
          });
-         // 삭제할부분끝
       </script>
    </body>
 </html>

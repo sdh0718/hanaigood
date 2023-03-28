@@ -105,7 +105,7 @@
                      <input type="number" name="certNum" id="certNum" class="number" placeholder="인증번호를 입력하세요." required />
                      <div class="invalid-feedback">인증번호를 입력해주세요.</div>
 
-                     <input type="button" class="btn next green-btn" value="다음으로" />
+                     <input id="b1" type="button" class="btn next green-btn" value="다음으로" />
                   </form>
                </div>
             </div>
@@ -118,13 +118,17 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let click = document.querySelector(".next");
-         click.addEventListener("click", function () {
-            alert("존재하지 않는 회원정보입니다.\n회원가입을 진행해주세요.");
+         const conf = document.querySelector("#b1");
+         conf.addEventListener("click", () => {
+            const gotoCreate = confirm("존재하지 않는 회원정보입니다.\n회원가입을 진행해주세요.");
+            if (gotoCreate) {
+               location.href = "3-create-account-1.html";
+            } else {
+               return false;
+            }
          });
-
-         let next = document.querySelector(".next");
-         next.addEventListener("click", function () {
+         const goto = document.querySelector("#b1");
+         goto.addEventListener("click", () => {
             location.href = "2-find-id-2.html";
          });
       </script>

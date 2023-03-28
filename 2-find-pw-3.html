@@ -92,7 +92,7 @@
             </div>
             <div class="container">
                <div class="cont-box2">
-                  <input type="button" class="btn gotologin green-btn" value="로그인" />
+                  <input id="b1" type="button" class="btn gotologin green-btn" value="로그인" />
                </div>
             </div>
          </section>
@@ -104,8 +104,8 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let gotologin = document.querySelector(".gotologin");
-         gotologin.addEventListener("click", function () {
+         const goto = document.querySelector("#b1");
+         goto.addEventListener("click", () => {
             location.href = "2-login.html";
          });
       </script>

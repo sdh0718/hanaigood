@@ -96,7 +96,7 @@
                         <input type="checkbox" name="auto-login" id="auto-login" class="form-check-input" />
                         <label for="auto-login" class="form-check-label">자동 로그인</label>
                      </div>
-                     <input type="button" class="btn green-btn" value="로그인" />
+                     <input id="b1" type="button" class="btn green-btn" value="로그인" />
                   </form>
                   <div class="service">
                      <a href="2-find-id-1.html">아이디 찾기</a>
@@ -116,8 +116,8 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let next = document.querySelector(".green-btn");
-         next.addEventListener("click", function () {
+         const goto = document.querySelector("#b1");
+         goto.addEventListener("click", () => {
             location.href = "1-financial-class.html";
          });
       </script>

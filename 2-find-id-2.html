@@ -97,8 +97,8 @@
                      <b class="user-id">hana1201</b>
                   </div>
                   <div class="btn-wrap">
-                     <input type="button" class="btn goto green-btn" value="로그인" />
-                     <input type="button" class="btn next green-btn" value="비밀번호 찾기" />
+                     <input id="b1" type="button" class="btn next green-btn" value="로그인" />
+                     <input id="b2" type="button" class="btn green-btn" value="비밀번호 찾기" />
                   </div>
                </div>
             </div>
@@ -112,13 +112,12 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
-         let goto = document.querySelector(".goto");
-         goto.addEventListener("click", function () {
+         const goto1 = document.querySelector("#b1");
+         goto1.addEventListener("click", () => {
             location.href = "2-login.html";
          });
-
-         let next = document.querySelector(".next");
-         next.addEventListener("click", function () {
+         const goto2 = document.querySelector("#b2");
+         goto2.addEventListener("click", () => {
             location.href = "2-find-pw-1.html";
          });
       </script>
