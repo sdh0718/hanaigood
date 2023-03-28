@@ -186,6 +186,16 @@
             var videoIframe = document.getElementById("video-iframe");
             videoIframe.src = url;
             modal.style.display = "block";
+
+            // 모바일에서 전체 화면으로 재생
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+               if (videoIframe.requestFullscreen) {
+                  videoIframe.requestFullscreen();
+               } else if (videoIframe.webkitRequestFullscreen) {
+                  videoIframe.webkitRequestFullscreen();
+               }
+               screen.orientation.lock("portrait");
+            }
          }
 
          const video = document.getElementById("video-iframe");
@@ -203,6 +213,8 @@
             video.currentTime = (x / width) * duration;
          });
          closeBtn.addEventListener("click", function () {
+            // video.pause();
+            // video.currentTime = 0;
             document.getElementById("video-modal").style.display = "none";
          });
       </script>

@@ -1523,7 +1523,9 @@ section.financial-class .modal .movie-bar {
       margin: 1rem auto;
    }
    section.financial-class .modal .top-bar,
-   section.financial-class .modal .movie-bar {
+   section.financial-class .modal .movie-bar,
+   section.financial-class .modal .movie-controls,
+   section.financial-class .modal #close-btn {
       display: none;
    }
 
