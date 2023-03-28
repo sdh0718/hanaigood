@@ -1518,15 +1518,42 @@ section.financial-class .modal .movie-bar {
    }
 
    /* ============================================================================= */
+   .subpage section.section {
+      padding: 6rem 0 0;
+   }
    section.financial-class ul.mov-area li {
       width: 100%;
       margin: 1rem auto;
    }
-   section.financial-class .modal .top-bar,
-   section.financial-class .modal .movie-bar,
-   section.financial-class .modal .movie-controls,
-   section.financial-class .modal #close-btn {
+
+   section.financial-class .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(70, 70, 70, 0.5);
+      z-index: 99;
+   }
+   section.financial-class .top-bar i img {
       display: none;
+   }
+   section.financial-class .movie-bar {
+      width: 100%;
+      background-color: rgb(70, 70, 70, 0.5);
+   }
+
+   .financial-class .top-bar .mov-tit,
+   .financial-class .top-bar .mov-tit *,
+   .financial-class .top-bar aside i {
+      font-size: 0.9rem;
+      padding: 0;
+      height: unset;
+      color: white;
+   }
+   .financial-class .top-bar aside > * {
+      font-size: 0.9rem;
+      color: white;
+      padding-left: 0.5rem;
    }
 
    /* ============================================================================= */
