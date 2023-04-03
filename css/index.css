@@ -1663,7 +1663,8 @@ section.financial-class .modal .movie-bar {
 ========================================== 576px / container-sm ========================================
 ========================================================================================================= */
 @media (max-width: 576px) {
-   .green-btn {
+   .green-btn,
+   .login .green-btn {
       width: 100%;
    }
    section.section .sub-tit h2 {
@@ -1756,6 +1757,9 @@ section.financial-class .modal .movie-bar {
    .login .cont-box2 > p {
       font-size: 1rem;
    }
+   .cont-box {
+      padding: 1rem;
+   }
 }
 /* ====================================================================================================== 
 ========================================== 400px / container- ========================================
@@ -1770,6 +1774,10 @@ section.financial-class .modal .movie-bar {
    section.sec6 ul.how-area li,
    section.sec3 .cont-wrap .cont {
       width: 100%;
+   }
+   .green-btn,
+   .login .green-btn {
+      font-size: 1rem;
    }
 }
 
@@ -1826,5 +1834,12 @@ section.financial-class .modal .movie-bar {
    section.sec0 .text-area p,
    section.sec0 .text-area b {
       letter-spacing: -1px;
+   }
+}
+
+@media screen and (orientation: portrait) {
+   .financial-class .modal {
+      width: 100%;
+      height: 100vh;
    }
 }
