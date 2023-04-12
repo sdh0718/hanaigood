@@ -19,6 +19,14 @@ window.addEventListener("DOMContentLoaded", () => {
       $(".popup.request").hide();
    });
 
+   $(".preopen-btn").click(function () {
+      $(".popup.preopen").show();
+   });
+   $(".popup.preopen .close").click(function () {
+      $(".popup.preopen").hide();
+   });
+
+
    $(".popup, .mo-navi-view").on("scroll touchmove mousewheel", function (e) {
       e.preventDefault();
       e.stopPropagation();
