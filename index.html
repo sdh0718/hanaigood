@@ -35,7 +35,7 @@
 
    <body>
       <div class="wrap main">
-         <div class="popup request">
+         <!-- <div class="popup request">
             <div class="request-wrap">
                <i><img src="img/popup-logo.png" alt="popup-logo" /></i>
                <i class="close"><img class="img-fluid" src="img/[mo]nav-close.svg" alt="close-btn" /></i>
@@ -46,6 +46,16 @@
                </div>
                <a class="tel-num" href="tel:+000-0000-0000">고객센터 : 000-0000-0000</a>
             </div>
+         </div> -->
+         <div class="popup preopen">
+            <div class="preopen-wrap">
+               <i class="close">
+                  <img class="img-fluid" src="img/[mo]nav-close.svg" alt="close-btn" />
+               </i>
+               <i class="preopen-img">
+                  <img class="img-fluid" src="img/preopen-img.png" alt="preopen" />
+               </i>
+            </div>
          </div>
 
          <nav id="menu" class="menu mainnav">
@@ -55,7 +65,8 @@
                   <li><a href="#p1">캠페인소개</a></li>
                   <li><a href="#p3">참여현황</a></li>
                   <li><a href="#p5">참여방법</a></li>
-                  <li><a href="1-financial-class.html">금융교실</a></li>
+                 <!--  <li><a href="1-financial-class.html">금융교실</a></li> -->
+                  <li><a class="preopen-btn">금융교실</a></li>
                </ul>
 
                <i class="mo-navi">
@@ -63,7 +74,7 @@
                </i>
 
                <div class="user-area active">
-                  <a href="2-login.html" class="btn">로그인</a>
+                  <!-- <a href="2-login.html" class="btn">로그인</a> -->
                </div>
                <!-- <div class="user-area">
                   <i><img src="img/[mo]nav-login-1.png" alt="login" /></i>
@@ -76,9 +87,9 @@
          <div class="mo-navi-view">
             <div class="nav-wrap">
                <aside>
-                  <a href="2-login.html">
+                  <!-- <a href="2-login.html">
                      <i><img src="img/[mo]nav-login-1.png" alt="login-icon" />로그인</i>
-                  </a>
+                  </a> -->
                   <!-- <i>
                      <img src="img/[mo]nav-login-1.png" alt="login-icon" />
                      <p class="user-name">김하나</p>
@@ -98,7 +109,8 @@
                   <i><img src="img/[mo]nav-icon3.svg" alt="nav-icon3" /></i>
                   참여방법
                </a>
-               <a href="1-financial-class.html">
+              <!-- <a href="1-financial-class.html"> -->
+               <a class="preopen-btn">
                   <i><img src="img/[mo]nav-icon4.svg" alt="nav-icon4" /></i>
                   금융교실
                </a>
@@ -123,7 +135,7 @@
                         환경을 살리는 장난감 기부 순환 활동도 함께!
                      </p>
                      <b>착한 경제 교육, 시작해볼까요?</b>
-                     <div class="btn-wrap">
+                     <!-- <div class="btn-wrap">
                         <a href="3-create-account-1.html" class="btn btn1">
                            <span>회원가입 <br />시작하기</span>
                            <i><img src="img/0.main-icon-arrow1.svg" alt="arrow1" /></i>
@@ -132,7 +144,7 @@
                            <span>금융교실 <br />바로가기</span>
                            <i><img src="img/0.main-icon-arrow1.svg" alt="arrow1" /></i>
                         </a>
-                     </div>
+                     </div> -->
                   </div>
                   <div class="img-area">
                      <img data-aos="fade-down" data-aos-duration="800" src="img/0.main-img1.png" alt="main-img1" />
@@ -155,7 +167,7 @@
                      <li><img src="img/[mo]grey-dot.svg" alt="grey-dot" /></li>
                   </ul>
                   <h2>하나 아이착한 <b></b>금융교육이 뭔가요?</h2>
-                  <p>어렵고 멀게만 느껴지는 경제에 대해<b></b>친구들이 관심을 가질 수 있도록 <span></span> 돈을 모으고 쓰는 등의<b></b>간단한 금융 계획과 실천의 이해를 도와요!</p>
+                  <p>어렵고 멀게만 느껴지는 경제에 대해 <b></b>친구들이 관심을 가질 수 있도록 <b></b><span></span>돈을 ‘모으고-쓰고-나누는’ 일상생활을 통해 <b></b>경제감각과 금융지식을 배워요!</p>
                </div>
 
                <div class="container cont-box d-flex flex-column">
@@ -163,8 +175,18 @@
                      <ul class="d-flex flex-lg-row flex-column">
                         <li>
                            <p>
-                              <span>금융교실과 함께</span>
-                              <b>스스로 배우는 즐거운 경제</b>
+                              <span>현장에서 직접 체험하는</span>
+                              <b>즐거운 놀이 활동과 경제</b>
+                           </p>
+                           <img src="img/1.sec1-img3.png" alt="sec1-img3" />
+                        </li>
+                        <li>
+                           <i><img src="img/1.sec1-icon-plus.svg" alt="plus-icon" /></i>
+                        </li>
+                        <li>
+                           <p>
+                              <span>온라인에서 함께하는</span>
+                              <b>스스로 배우는 금융교실</b>
                            </p>
                            <img src="img/1.sec1-img1.png" alt="sec1-img1" />
                         </li>
@@ -174,19 +196,9 @@
                         <li>
                            <p>
                               <span>장난감 기부를 통한</span>
-                              <b>친환경 자원순환 체험</b>
+                              <b>초록별 자원순환 체험</b>
                            </p>
                            <img src="img/1.sec1-img2.png" alt="sec1-img2" />
-                        </li>
-                        <li>
-                           <i><img src="img/1.sec1-icon-plus.svg" alt="plus-icon" /></i>
-                        </li>
-                        <li>
-                           <p>
-                              <span>어린이 통장 개설로</span>
-                              <b>저축의 가치 배우기</b>
-                           </p>
-                           <img src="img/1.sec1-img3.png" alt="sec1-img3" />
                         </li>
                      </ul>
                   </div>
@@ -194,7 +206,7 @@
                      <i><img src="img/1.sec1-icon-ecole.svg" alt="ecole-icon" /></i>
                      <img class="img-fluid" src="img/1.sec1-img4.png" alt="sec1-img4" />
                      <p>
-                        <span>미래세대의 올바른 환경·금융관 확립을 위한</span>
+                        <span>미래세대의 올바른 환경·경제관 확립을 위한</span>
                         <b>슬기로운 어린이 금융교육 프로그램</b>
                      </p>
                   </div>
@@ -218,10 +230,11 @@
                      <img class="img-fluid" src="img/2.sec2-img1.png" alt="sec2-img1" />
                      <div class="t-box">
                         <h6>모모모 놀이</h6>
+                        <p class="sex2-sub-title">모으고 모으고 모으자!</p>
                         <p>
-                           모으고 모으고 모으자!<br />
-                           내가할래요! 모아모아통장에 자꾸자꾸 모이네~ <br />
-                           친구들과 모모모보드게임으로 경제감각 up
+                           돈의 개념과 가치를 이해하고<br />
+                           돈을 모으는 방법을 생각하고 실천하여 <br />
+                           일과 돈의 교환에 대한 경제감각을 길러봐요!
                         </p>
                      </div>
                   </div>
@@ -229,10 +242,11 @@
                      <img class="img-fluid" src="img/2.sec2-img2.png" alt="sec2-img2" />
                      <div class="t-box">
                         <h6>나초초 놀이</h6>
+                        <p class="sex2-sub-title">나를 위해, 초록별을 위해, 초록소비!</p>
                         <p>
-                           나를 위해 초록별을 위해 초록빛 착한소비<br />
-                           살래요-나중에살래요-나눌래요<br />
-                           초록가방 들고서 탄소제로 발걸음을 걸어보자!
+                           계획적인 소비의 중요성을 배우고<br />
+                           목적에 따라 달라지는 소비를 이해함으로써<br />
+                           초록별 지구를 위한 소비를 실천해요!
                         </p>
                      </div>
                   </div>
@@ -240,11 +254,11 @@
                      <img class="img-fluid" src="img/2.sec2-img3.png" alt="sec2-img3" />
                      <div class="t-box">
                         <h6>바나나 놀이</h6>
+                        <p class="sex2-sub-title">바꾸자! 나누자! 나와 함께!</p>
                         <p>
-                           바꿔쓰고 나눠쓰자 나랑 함께<br />
-                           은행에 가면? 착한가게에 가면?<br />
-                           장난감을 기부하면 좋은 일이 생긴대요.<br />
-                           받고-나누고!
+                           자원의 유한성을 기초로 나누는 기쁨과<br />
+                           장난감 재구매 및 기부를 실천하여<br />
+                           지속가능한 순환경제에 대해 배워봐요!
                         </p>
                      </div>
                   </div>
@@ -266,26 +280,27 @@
                <div class="container cont-box">
                   <div class="cont-wrap flex-lg-row flex-column">
                      <div class="cont cont1">
-                        <h6>뽀득뽀득 목욕하고~</h6>
+                        <h6>코끼리공장을 만나서</h6>
                      </div>
                      <i class="mo-img">
                         <img class="img-fluid" src="img/[mo]icon-arrow.svg" alt="arrow" />
                      </i>
                      <div class="cont cont2">
-                        <h6>예쁜옷도 입고~</h6>
+                        <h6>깨끗하게 소독하고</h6>
                      </div>
                      <i class="mo-img">
                         <img class="img-fluid" src="img/[mo]icon-arrow.svg" alt="arrow" />
                      </i>
                      <div class="cont cont3">
-                        <h6>새 친구와 만났어요!</h6>
+                        <h6>새로운 친구와 만났어요!</h6>
                      </div>
                   </div>
                   <div class="t-area">
                      <p>
-                        장난감 친구들은 깨끗하게 목욕하고 <br />
-                        예쁜 옷을 입은 뒤에 새로운 친구를 만났어요!
-                        <b>#다문화가족지원센터 #육아종합지원센터</b>
+                        장난감 친구들은 코끼리공장을 만나 <br />
+                        깨끗하게 목욕하고 예쁜 옷을 입은 뒤 <br />
+                        새로운 친구들을 만났어요!
+                        <span>#다문화가족지원센터 <b></b>#육아종합지원센터 <b></b>#해외아동지원</span>
                      </p>
                   </div>
                </div>
@@ -299,8 +314,8 @@
                   </ul>
                   <h2>찾아가는 금융교육 <b></b>현장을 살펴볼까요?</h2>
                   <p>
-                     어린이집과 유치원에서 진행된 <br />
-                     하나 아이착한 금융교육 프로그램 사진을 공개할게요!
+                     전국의 어린이집과 유치원에서 진행된 <br />
+                     하나 아이착한 금융교육 현장 사진을 공개할게요!
                   </p>
                </div>
                <div class="container cont-box">
@@ -314,7 +329,7 @@
                      <img src="img/4.sec4-img1.png" alt="7" />
                      <img src="img/4.sec4-img1.png" alt="8" />
                   </div>
-                  <a class="green-btn request-btn btn">찾아가는 금융교육 단체 문의</a>
+                  <!-- <a class="green-btn request-btn btn">찾아가는 금융교육 단체 문의</a> -->
                </div>
             </section>
 
@@ -354,20 +369,20 @@
                   <ul class="how-area d-flex flex-lg-row flex-column justify-content-between">
                      <li class="cont1">
                         <p>
-                           회원가입 후 <b></b>
-                           온라인 교육 수료
+                           하나 아이착한 금융교육 <b></b>
+                           회원가입 하기
                         </p>
-                        <img class="img-fluid" src="img/6.sec6-img1.png" alt="sec6-img1" />
+                        <img class="img-fluid" src="img/6.sec6-img4.png" alt="sec6-img4" />
                      </li>
                      <i class="mo-img">
                         <img class="img-fluid" src="img/[mo]icon-arrow.svg" alt="arrow" />
                      </i>
                      <li class="cont2">
                         <p>
-                           수료증 지참하여 <b></b>
-                           은행 방문
+                           온라인 영상 교육 <b></b>
+                           꼼꼼히 학습하기
                         </p>
-                        <img class="img-fluid" src="img/6.sec6-img2.png" alt="sec6-img2" />
+                        <img class="img-fluid" src="img/6.sec6-img1.png" alt="sec6-img1" />
                      </li>
                      <i class="mo-img">
                         <img class="img-fluid" src="img/[mo]icon-arrow.svg" alt="arrow" />
@@ -375,7 +390,7 @@
                      <li class="cont3">
                         <p>
                            장난감 기부하고 <b></b>
-                           어린이 통장 개설
+                           수료증 발급받기
                         </p>
                         <img class="img-fluid" src="img/6.sec6-img3.png" alt="sec6-img3" />
                      </li>
@@ -384,13 +399,14 @@
                      </i>
                      <li class="cont4">
                         <p>
-                           켐페인 참여기념 <b></b>
-                           인증샷 찰칵!
+                           하나금융에서 제공하는 <b></b>
+                           수료자 혜택 받기
                         </p>
-                        <img class="img-fluid" src="img/6.sec6-img4.png" alt="sec6-img4" />
+                        <img class="img-fluid" src="img/6.sec6-img2.png" alt="sec6-img2" />
                      </li>
                   </ul>
-                  <a href="3-create-account-1.html" class="btn green-btn"> <b>회원가입</b>하고 <b>금융교실 GO!</b> </a>
+                  <a class="btn preopen-btn green-btn"> <b>회원가입</b>하고 <b>금융교실 GO!</b> </a>
+                  <!-- <a href="3-create-account-1.html" class="btn green-btn"> <b>회원가입</b>하고 <b>금융교실 GO!</b> </a> -->
                   <!-- <a href="1-financial-class.html" class="btn green-btn"><b>금융교실 GO!</b> </a> -->
                </div>
             </section>
@@ -405,7 +421,7 @@
                      <div>
                         <a href="4-terms.html" class="btn">서비스이용약관</a>
                         <a href="4-privacy.html" class="btn">개인정보처리방침</a>
-                        <a href="3-create-account-1.html" class="btn">회원가입</a>
+                        <!-- <a href="3-create-account-1.html" class="btn">회원가입</a> -->
                         <!-- <a class="btn quit">회원탈퇴</a> -->
                      </div>
                   </div>

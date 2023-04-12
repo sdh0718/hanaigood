@@ -132,7 +132,8 @@ section.section .sub-tit p {
    line-height: 1.4em;
    font-weight: 400;
 }
-section.section .sub-tit p b {
+section.section .sub-tit p b,
+section.section .t-area p b {
    display: inline;
 }
 section.section .sub-tit p span {
@@ -195,13 +196,13 @@ nav.menu {
    border-radius: 30px;
 }
 .fp-viewing-p3 #menu li:nth-child(2) a,
-.fp-viewing-p4 #menu li:nth-child(2) a,
-.fp-viewing-p5 #menu li:nth-child(2) a {
+.fp-viewing-p4 #menu li:nth-child(2) a {
    color: #008d8f;
    font-weight: 600;
    background-color: white;
    border-radius: 30px;
 }
+.fp-viewing-p5 #menu li:nth-child(3) a,
 .fp-viewing-p6 #menu li:nth-child(3) a,
 .fp-viewing-p7 #menu li:nth-child(3) a {
    color: #008d8f;
@@ -256,11 +257,10 @@ nav.menu .user-area * {
    z-index: 99;
    width: 100vw;
    height: 100vh;
-   padding: 3rem;
    background-color: rgba(0, 0, 0, 0.5);
    display: none;
+   padding: 1rem;
 }
-
 .popup .request-wrap {
    position: relative;
    display: flex;
@@ -274,8 +274,22 @@ nav.menu .user-area * {
    min-height: 600px;
    margin: 0 auto;
 }
-
-.popup.request .close {
+.popup .preopen-wrap {
+   position: relative;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 0;
+   border-radius: 20px;
+   max-width: 650px;
+   margin: 6rem auto 0;
+}
+.popup .preopen-wrap:after{
+   display: block;
+   padding-bottom: 100%;
+}
+.popup .close {
    position: absolute;
    right: 3%;
    top: 3%;
@@ -284,9 +298,12 @@ nav.menu .user-area * {
    height: 40px;
    cursor: pointer;
 }
-.popup.request .close img {
+.popup .close img {
    width: 100%;
 }
+/* 모든 팝업 이미지 처리 시 아래 삭제 */
+
+/*
 .popup.request h3 {
    font-size: 2rem;
    line-height: 1.2em;
@@ -302,6 +319,7 @@ nav.menu .user-area * {
    font-size: 1.2rem;
    font-weight: 600;
 }
+*/
 
 /* ====================================================================================================== 
 ================================================== main =================================================
@@ -370,7 +388,8 @@ section.sec0 .text-area p {
    font-size: 1.2rem;
    line-height: 1.4em;
    font-weight: 400;
-   padding-bottom: 8rem;
+   /* padding-bottom: 8rem; */
+   padding-bottom: 2rem;
 }
 section.sec0 .text-area b {
    display: block;
@@ -530,11 +549,16 @@ section.sec2 .t-box h6 {
    font-weight: 600;
    font-size: 1.4rem;
    color: #008d8f;
-   padding-bottom: 1rem;
+   padding-bottom: 0.3rem;
 }
 section.sec2 .t-box p {
    font-size: 1rem;
    line-height: 1.6em;
+}
+section.sec2 .t-box p.sex2-sub-title {
+   font-size: 0.8rem;
+   color: #a0a0a0;
+   padding-bottom: 0.7rem;
 }
 
 /* ====================================================================================================== 
@@ -582,8 +606,8 @@ section.sec3 .cont2 {
    background-image: url(../img/3.sec3-slide-bak2.png);
    background-size: cover;
    z-index: 1;
-   min-height: 320px;
-   max-width: 450px;
+   min-height: 300px;
+   max-width: 400px;
    width: 40%;
 }
 section.sec3 .cont3 {
@@ -594,16 +618,16 @@ section.sec3 .cont3 {
    width: 30%;
 }
 section.sec3 .cont1::after {
-   background-image: url(../img/3.sec3-img1.png);
+   background-image: url(../img/3.sec3-img4.png);
    background-repeat: no-repeat;
-   background-size: 80% 80%;
+   background-size: 75% 75%;
    width: 260px;
    height: 150px;
    bottom: -20%;
    left: -30%;
 }
 section.sec3 .cont2::after {
-   background-image: url(../img/3.sec3-img2.png);
+   background-image: url(../img/3.sec3-img1.png);
    background-repeat: no-repeat;
    background-size: 80% 80%;
    width: 260px;
@@ -617,8 +641,8 @@ section.sec3 .cont3::after {
    background-size: 60% 60%;
    width: 260px;
    height: 150px;
-   top: -20%;
-   right: -40%;
+   bottom: -28%;
+   right: -45%;
 }
 section.sec3 .t-area {
    padding: 1rem 0 2rem;
@@ -628,10 +652,11 @@ section.sec3 .t-area p {
    font-size: 1.1rem;
    line-height: 1.3em;
 }
-section.sec3 .t-area p b {
+section.sec3 .t-area p span {
    display: block;
    margin-top: 0.6rem;
    font-weight: 600;
+   line-height: 1.5rem;
 }
 
 /* ====================================================================================================== 
@@ -729,10 +754,12 @@ footer.footer * {
    color: white;
 }
 
+/*
 footer.footer .footer-wrap {
    height: 250px;
    background-color: #5eccc6;
 }
+*/
 footer.footer .top-area {
    padding: 1rem 0;
 }
@@ -742,11 +769,21 @@ footer.footer .top-area > * > * {
 footer.footer a:hover {
    color: white;
 }
+/*
 footer.footer p.copyright {
    text-align: center;
    padding-top: 7rem;
 }
+*/
+footer.footer .footer-wrap {
+   height: auto;
+   background-color: #5eccc6;
+}
 
+footer.footer p.copyright {
+   text-align: center;
+   padding: 20px 0;
+}
 /* ====================================================================================================== 
 ========================================== 서브페이지 ========================================
 ========================================================================================================= */
@@ -1507,13 +1544,35 @@ section.financial-class .modal .movie-bar {
       padding-top: 6rem;
    }
    footer.footer .top-area {
+      padding: 1.5rem 0 0 0;
+/*
       padding-left: 0.5rem;
       flex-flow: column-reverse !important;
+*/
    }
+/*
    footer.footer p.copyright {
       padding: 0rem 1rem;
       padding-top: 4rem;
       font-size: 1rem;
+      line-height: 1.2em;
+   }
+*/
+   footer.footer .top-area>div {
+      padding-bottom: 0.5rem;
+   }
+   footer.footer .top-area>div>img {
+      display: block;
+      margin: 0 auto;
+      padding: 0 0 0.5rem;
+   }
+   footer.footer .top-area a {
+      font-size: 0.8rem;
+      display: block;
+   }
+   footer.footer p.copyright {
+      padding: 1rem 1rem;
+      font-size: 0.5rem;
       line-height: 1.2em;
    }
 
@@ -1631,22 +1690,20 @@ section.financial-class .modal .movie-bar {
 ========================================== 768px / container-md ========================================
 ========================================================================================================= */
 @media (max-width: 768px) {
-   .popup {
-      padding: 3rem 0.5rem;
+   .popup .request-wrap,
+   .popup .preopen-wrap {
+      margin: 8rem auto 0;
    }
-   .popup .request-wrap {
-      padding: 1rem;
-   }
-   .popup.request img {
-      display: block;
-      width: 80%;
-      margin: 0 auto;
-   }
-   .popup.request .close {
-      right: 16px;
-      top: 16px;
+   .popup .close {
+      right: 10px;
+      top: 10px;
       width: 30px;
       height: 30px;
+   }
+   .popup .close img {
+      display: block;
+      padding: 10%;
+      margin: 0 auto;
    }
    .popup.request h3 {
       text-align: center;
@@ -1678,7 +1735,8 @@ section.financial-class .modal .movie-bar {
       font-size: 1rem;
       line-height: 1.4em;
    }
-   section.section .sub-tit p b {
+   section.section .sub-tit p b,
+   section.section .t-area p b{
       display: block;
    }
    section.section .sub-tit p span {
@@ -1710,14 +1768,15 @@ section.financial-class .modal .movie-bar {
    section.sec3 .cont-wrap .cont::after {
       width: 180px;
       height: 110px;
+      top: 55%
    }
    section.sec3 .cont-wrap .cont1::after {
-      top: 55%;
-      left: 55%;
+      left: 50%;
    }
-   section.sec3 .cont-wrap .cont2::after,
+   section.sec3 .cont-wrap .cont2::after {
+      left: 60%;
+   }
    section.sec3 .cont-wrap .cont3::after {
-      top: 55%;
       left: 45%;
    }
 
