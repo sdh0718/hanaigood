@@ -1884,10 +1884,13 @@ section.financial-class .modal .movie-bar {
       max-width: 240px;
    }
    section.sec0 .text-area h2,
-   section.sec0 .text-area h1,
-   section.sec0 .text-area p {
-      line-height: 1em;
+   section.sec0 .text-area h1{
+      line-height: 1.15em;
       padding-bottom: 1rem;
+   }
+   section.sec0 .text-area p {
+      font-size: 1rem;
+      line-height: 1.4em;
    }
    section.sec0 .text-area b {
       padding-bottom: 1.5rem;
