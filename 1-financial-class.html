@@ -23,6 +23,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
       <!-- other -->
       <link rel="stylesheet" href="css/index.css" />
+      <style>
+			::-webkit-scrollbar {
+				display: none;
+			}
+		</style>
    </head>
 
    <body>
@@ -51,7 +56,6 @@
                </div>
             </div>
          </nav>
-
          <div class="mo-navi-view">
             <div class="nav-wrap">
                <aside>
@@ -83,47 +87,87 @@
                </a>
             </div>
          </div>
+			<div id="video-modal" class="modal popup">
+				<div class="top-bar">
+					<aside>
+						<i><img class="img-fluid" src="img/hana-mainlogo.svg" alt="mainlogo" /></i>
+						<p class="mov-tit">1강. <b>금융교육</b></p>
+						<span>이번 강의의 핵심 내용 한 줄 요약(수정필요)</span>
+					</aside>
+				</div>
+				<div class="modal-content">
+					<div class="video-wrapper">
+						<iframe id="video-iframe" src="" frameborder="0" scrolling="no" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="movie-bar">
+					<div class="movie-controls">
+						<button id="play-btn"><i class="fas fa-play"></i></button>
+						<button id="pause-btn"><i class="fas fa-pause"></i></button>
+						<button id="replay-btn"><i class="fas fa-redo"></i></button>
+					</div>
+					<div class="movie-progress">
+						<div id="progress-bar"></div>
+					</div>
+					<div class="other-controls">
+						<button id="vol-min-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+								<path class="cls-1" d="M16.73,.25L4.75,4.37H2.13c-1.18,0-2.13,.72-2.13,1.62V14.03c0,.89,.95,1.62,2.13,1.62h2.62l11.95,4.1c1.42,.68,3.27-.09,3.27-1.37l.03-16.76c0-1.28-1.85-2.05-3.27-1.37Zm-1.58,11.25h-6.97c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h6.97c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"/>
+							</svg>
+						</button>
+						<button id="vol-pl-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+								<path class="cls-1" d="M16.73,.25L4.75,4.37H2.13c-1.18,0-2.13,.72-2.13,1.62V14.03c0,.89,.95,1.62,2.13,1.62h2.62l11.95,4.1c1.42,.68,3.27-.09,3.27-1.37l.03-16.76c0-1.28-1.85-2.05-3.27-1.37Zm-1.58,11.25h-1.98v1.98c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5v-1.98h-1.98c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h1.98v-1.98c0-.83,.67-1.5,1.5-1.5s1.5,.67,1.5,1.5v1.98h1.98c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"/>
+							</svg>
+						</button>
+						<button id="close-btn"><i class="fas fa-times"></i></button>
+					</div>
+				</div>
+			</div>
+			<div id="mo-video-modal" class="modal popup">
+				<div class="top-bar">
+					<aside>
+						<i><img class="img-fluid" src="img/popup-logo-w.png" alt="popup-logo" /></i>
+						<p class="mov-tit">1강. 금융교육</p>
+					</aside>
+				</div>
+				<div class="modal-content">
+					<div class="video-wrapper">
+						<!-- <iframe id="video-iframe" src="" frameborder="0" scrolling="no" allowfullscreen></iframe> -->
+						<iframe id="video-iframe player" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="범고래마루 Show Reel 영상" width="640" height="360" src="https://www.youtube.com/embed/L8WvFPP8S6Q?autoplay=1&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;rel=0&amp;origin=http%3A%2F%2Fwww.hanaigood.com&amp;enablejsapi=1&amp;widgetid=2"></iframe>
+					</div>
+				</div>
 
+				<div class="movie-bar">
+					<div class="movie-controls">
+						<button id="play-btn"><i class="fas fa-play"></i></button>
+						<button id="pause-btn"><i class="fas fa-pause"></i></button>
+						<button id="replay-btn"><i class="fas fa-redo"></i></button>
+					</div>
+					<div class="movie-progress">
+						<div id="progress-bar"></div>
+					</div>
+					<div class="other-controls">
+						<button id="vol-min-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+								<path class="cls-1" d="M16.73,.25L4.75,4.37H2.13c-1.18,0-2.13,.72-2.13,1.62V14.03c0,.89,.95,1.62,2.13,1.62h2.62l11.95,4.1c1.42,.68,3.27-.09,3.27-1.37l.03-16.76c0-1.28-1.85-2.05-3.27-1.37Zm-1.58,11.25h-6.97c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h6.97c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"/>
+							</svg>
+						</button>
+						<button id="vol-pl-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+								<path class="cls-1" d="M16.73,.25L4.75,4.37H2.13c-1.18,0-2.13,.72-2.13,1.62V14.03c0,.89,.95,1.62,2.13,1.62h2.62l11.95,4.1c1.42,.68,3.27-.09,3.27-1.37l.03-16.76c0-1.28-1.85-2.05-3.27-1.37Zm-1.58,11.25h-1.98v1.98c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5v-1.98h-1.98c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h1.98v-1.98c0-.83,.67-1.5,1.5-1.5s1.5,.67,1.5,1.5v1.98h1.98c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"/>
+							</svg>
+						</button>
+						<button id="close-btn"><i class="fas fa-times"></i></button>
+					</div>
+				</div>
+			</div>
          <section class="section financial-class">
-            <div class="sub-tit">
+         	<div class="sub-tit">
                <h2>하나 아이착한 금융교실</h2>
             </div>
             <div class="container cont-box">
-               <ul class="mov-area d-flex flex-lg-row flex-column justify-content-center">
-                  <div id="video-modal" class="modal popup">
-                     <div class="top-bar">
-                        <aside>
-                           <i><img class="img-fluid" src="img/hana-mainlogo.svg" alt="mainlogo" /></i>
-                           <p class="mov-tit">1강. <b>금융교육</b></p>
-                           <span>이번 강의의 핵심 내용 한 줄 요약(수정필요)</span>
-                        </aside>
-                     </div>
-                     <div class="modal-content">
-                        <div class="video-wrapper">
-                           <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                     </div>
-                     <div class="movie-bar">
-                        <div class="movie-controls">
-                           <button id="play-btn"><i class="fas fa-play"></i></button>
-                           <button id="pause-btn"><i class="fas fa-pause"></i></button>
-                           <button id="replay-btn"><i class="fas fa-redo"></i></button>
-                        </div>
-                        <div class="movie-progress">
-                           <div id="progress-bar"></div>
-                        </div>
-                        <button id="vol-btn">
-                            <svg class="svg-inline--fa fa-pause fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-                                <g transform="matrix(.1615 0 0 .1615 1.7 1.638)">
-                                    <path d="m57.57 8.464c-1.412 0-2.634.517-3.666 1.548l-27.13 27.13h-21.346c-1.413 0-2.635.517-3.667 1.548-1.032 1.032-1.548 2.255-1.548 3.667v31.28c0 1.412.516 2.635 1.548 3.666 1.033 1.032 2.255 1.549 3.667 1.549h21.345l27.13 27.13c1.032 1.031 2.254 1.548 3.666 1.548 1.413 0 2.635-.517 3.667-1.548 1.032-1.031 1.548-2.254 1.548-3.666v-88.64c0-1.412-.516-2.635-1.547-3.667-1.033-1.031-2.254-1.548-3.667-1.548"/>
-                                    <path d="m90.61 69.53c2.309-3.557 3.463-7.399 3.463-11.527 0-4.128-1.154-7.988-3.463-11.573-2.31-3.585-5.363-6.11-9.166-7.577-.543-.271-1.223-.407-2.037-.407-1.412 0-2.635.503-3.666 1.507-1.031 1.01-1.549 2.241-1.549 3.707 0 1.141.326 2.105.979 2.893.652.788 1.439 1.467 2.363 2.037.922.57 1.846 1.195 2.77 1.874.924.679 1.711 1.643 2.363 2.892.65 1.25.977 2.798.977 4.645 0 1.847-.326 3.395-.977 4.645-.652 1.25-1.439 2.213-2.363 2.893-.924.679-1.848 1.304-2.77 1.874-.924.569-1.711 1.249-2.363 2.036-.652.789-.979 1.752-.979 2.893 0 1.467.518 2.702 1.549 3.707 1.031 1 2.254 1.508 3.666 1.508.814 0 1.494-.136 2.037-.406 3.803-1.523 6.857-4.063 9.166-7.621"/>
-                                    <path d="m108 81.02c4.617-7.03 6.926-14.705 6.926-23.02 0-8.311-2.309-15.982-6.926-23.02-4.617-7.03-10.729-12.152-18.332-15.357-.705-.271-1.412-.407-2.117-.407-1.412 0-2.635.516-3.668 1.548-1.031 1.032-1.547 2.254-1.547 3.666 0 2.119 1.059 3.721 3.178 4.808 3.041 1.575 5.105 2.77 6.191 3.584 4.02 2.934 7.156 6.613 9.41 11.04 2.254 4.427 3.381 9.139 3.381 14.14 0 4.997-1.127 9.709-3.381 14.14-2.254 4.428-5.391 8.106-9.41 11.04-1.086.815-3.15 2.01-6.191 3.585-2.119 1.087-3.178 2.689-3.178 4.808 0 1.412.516 2.635 1.547 3.666 1.033 1.033 2.281 1.549 3.748 1.549.652 0 1.332-.137 2.037-.407 7.603-3.206 13.715-8.325 18.332-15.359"/>
-                                </g>
-                            </svg>
-                        </button>
-                        <button id="close-btn"><i class="fas fa-times"></i></button>
-                     </div>
-                  </div>
+            	<ul class="mov-area d-flex flex-lg-row flex-column justify-content-center">
                   <li id="mov1" class="active mov">
                      <a href="#" onclick="openVideo1('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
                         <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
@@ -180,6 +224,10 @@
       <!-- other -->
       <script src="js/index.js"></script>
       <script>
+			$("#video-iframe").on("scroll touchmove mousewheel", function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+			});
          const conf = document.querySelector(".unlock");
          conf.addEventListener("click", () => {
             const shouldLogin = confirm("교육을 위해 로그인이 필요합니다!\n로그인 후 이용 해주세요.");
