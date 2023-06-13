@@ -26,8 +26,15 @@ window.addEventListener("DOMContentLoaded", () => {
       $(".popup.preopen").hide();
    });
 
+	$(".donation-btn").click(function () {
+      $(".popup.donation").show();
+   });
+   $(".popup.donation .close").click(function () {
+      $(".popup.donation").hide();
+		console.log(2);
+   });
 
-   $(".popup, .mo-navi-view").on("scroll touchmove mousewheel", function (e) {
+   $(".popup, #mo-navi-view").on("scroll touchmove mousewheel", function (e) {
       e.preventDefault();
       e.stopPropagation();
    });

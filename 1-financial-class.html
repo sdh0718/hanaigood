@@ -32,6 +32,16 @@
 
    <body>
       <div class="wrap subpage financial">
+         <div class="popup donation">
+            <div class="donation-wrap">
+               <i class="close">
+                  <img class="img-fluid" src="img/[mo]nav-close.svg" alt="close-btn" />
+               </i>
+               <i class="donation-img">
+                  <img class="img-fluid" src="img/donation-img.jpg" alt="donation" />
+               </i>
+            </div>
+         </div>
          <nav id="menu" class="menu">
             <div class="container">
                <a class="logo" href="index.html"><img src="img/hana-mainlogo.svg" alt="mainlogo" /></a>
@@ -87,7 +97,7 @@
                </a>
             </div>
          </div>
-			<div id="video-modal" class="modal popup">
+			<!-- <div id="pc-video-modal" class="modal popup">
 				<div class="top-bar">
 					<aside>
 						<i><img class="img-fluid" src="img/hana-mainlogo.svg" alt="mainlogo" /></i>
@@ -123,18 +133,11 @@
 						<button id="close-btn"><i class="fas fa-times"></i></button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div id="mo-video-modal" class="modal popup">
-				<div class="top-bar">
-					<aside>
-						<i><img class="img-fluid" src="img/popup-logo-w.png" alt="popup-logo" /></i>
-						<p class="mov-tit">1강. 금융교육</p>
-					</aside>
-				</div>
 				<div class="modal-content">
 					<div class="video-wrapper">
-						<!-- <iframe id="video-iframe" src="" frameborder="0" scrolling="no" allowfullscreen></iframe> -->
-						<iframe id="video-iframe player" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="범고래마루 Show Reel 영상" width="640" height="360" src="https://www.youtube.com/embed/L8WvFPP8S6Q?autoplay=1&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;rel=0&amp;origin=http%3A%2F%2Fwww.hanaigood.com&amp;enablejsapi=1&amp;widgetid=2"></iframe>
+						<iframe id="video-iframe" src="" frameborder="0" scrolling="no" allowfullscreen></iframe>
 					</div>
 				</div>
 
@@ -169,30 +172,32 @@
             <div class="container cont-box">
             	<ul class="mov-area d-flex flex-lg-row flex-column justify-content-center">
                   <li id="mov1" class="active mov">
-                     <a href="#" onclick="openVideo1('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
+                     <!-- PC용
+							<a href="#" onclick="openVideoPc('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
+                        <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
+                     </a> -->
+                     <!-- 모바일용 -->
+                     <a href="#" onclick="openVideoMo('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
                         <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
                      </a>
-                     <p class="mov-tit">1강. <b>금융교육</b></p>
+                     <p class="mov-tit">1강. 자꾸자꾸 모이네</p>
                   </li>
                   <li id="mov2" class="unlock mov">
                      <a href="#" onclick="openVideo1('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
-                        <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
+                        <img class="img-fluid" src="img/mov-thumb2.png" alt="mov-thumb1" />
                      </a>
-                     <p class="mov-tit">2강. <b>금융교육</b></p>
+                     <p class="mov-tit">2강. 살까? 말까!</p>
                   </li>
                   <li id="mov3" class="finish mov">
                      <a href="#" onclick="openVideo1('https://drive.google.com/file/d/1PH3TX6_aTHlLnafDEFQQsz1MP9_K0w_D/preview'); return false;">
-                        <img class="img-fluid" src="img/mov-thumb1.png" alt="mov-thumb1" />
+                        <img class="img-fluid" src="img/mov-thumb3.png" alt="mov-thumb1" />
                      </a>
-                     <p class="mov-tit">3강. <b>금융교육</b></p>
+                     <p class="mov-tit">3강. 주고, 받고, 나누고</p>
                   </li>
                </ul>
                <div class="finish-area">
-                  <p>
-                     수업이 완료되었어요!<br />
-                     수료증과 안내문을 확인해주세요.
-                  </p>
-                  <a href="하나 아이착한 금융교실 수료증 2page.pdf" download class="btn green-btn">수료증 확인</a>
+                  <p>금융교실 수업이 완료되었습니다!<br/>장난감 기부에 참여하고 하나금융에서 준비한 선물도 받아보세요!</p>
+                  <a class="btn donation-btn green-btn">장난감 기부 참여 안내</a>
                </div>
             </div>
          </section>
@@ -228,6 +233,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 			});
+
          const conf = document.querySelector(".unlock");
          conf.addEventListener("click", () => {
             const shouldLogin = confirm("교육을 위해 로그인이 필요합니다!\n로그인 후 이용 해주세요.");
@@ -238,8 +244,19 @@
             }
          });
 
-         function openVideo1(url) {
+         function openVideoPc(url) {
             var modal = document.getElementById("video-modal");
+            var videoIframe = document.getElementById("video-iframe");
+            videoIframe.src = url;
+            modal.style.display = "block";
+
+            // 모바일에서 전체 화면으로 재생
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            }
+         }
+
+			function openVideoMo(url) {
+            var modal = document.getElementById("mo-video-modal");
             var videoIframe = document.getElementById("video-iframe");
             videoIframe.src = url;
             modal.style.display = "block";
@@ -266,7 +283,7 @@
          closeBtn.addEventListener("click", function () {
             // video.pause();
             // video.currentTime = 0;
-            document.getElementById("video-modal").style.display = "none";
+            document.getElementById("mo-video-modal").style.display = "none";
          });
       </script>
    </body>

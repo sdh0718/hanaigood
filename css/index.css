@@ -258,7 +258,7 @@ nav.menu .user-area * {
    width: 100vw;
    height: 100vh;
    background-color: rgba(0, 0, 0, 0.5);
-   display: none;
+   /* display: none; */
    padding: 1rem;
 }
 .popup .request-wrap {
@@ -814,6 +814,22 @@ footer.footer p.copyright {
 /* ====================================================================================================== 
 ========================================== 금융교육 ========================================
 ========================================================================================================= */
+.popup .donation-wrap {
+   position: relative;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 0;
+   border-radius: 20px;
+   max-width: 650px;
+   margin: 1rem auto 0;
+}
+.popup .donation-wrap:after{
+   display: block;
+   padding-bottom: 100%;
+}
+
 .subpage section.financial-class .sub-tit h2{
 	padding: 0px;
 }
@@ -1028,16 +1044,6 @@ section.financial-class .finish-area p {
    border-radius: 5px;
    width: 0%;
 }
-#video-modal #progress-bar::after {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: calc(100% + 0px);
-   z-index: 99;
-   height: 10px;
-   width: 13px;
-   background-color: #4d4d4d;
-}
 
 #video-modal #close-btn {
    border: none;
@@ -1220,16 +1226,6 @@ section#video-modal .modal .movie-bar {
    background-color: #008d8f;
    border-radius: 5px;
    width: 0%;
-}
-#mo-video-modal #progress-bar::after {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: calc(100% + 0px);
-   z-index: 99;
-   height: 10px;
-   width: 13px;
-   background-color: #4d4d4d;
 }
 
 #mo-video-modal #close-btn {
@@ -1941,7 +1937,8 @@ section#mo-video-modal .modal .movie-bar {
 ========================================================================================================= */
 @media (max-width: 768px) {
    .popup .request-wrap,
-   .popup .preopen-wrap {
+   .popup .preopen-wrap,
+   .popup .donation-wrap {
       margin: 8rem auto 0;
    }
    .popup .close {
