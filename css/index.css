@@ -391,20 +391,17 @@ section.sec0 .text-area .btn-wrap a.btn {
    padding: 0;
    border-radius: 6px;
 }
+section.sec0 .text-area .btn-wrap div>div{
+	width: 100%;
+	color: #3b8587;
+	text-align: center;
+	font-size: 0.9rem;;
+   line-height: 1.3rem;
+}
 section.sec0 .text-area .btn-wrap a.btn1 {
 	margin-right: 0.5rem;
 }
-section.sec0 .text-area .btn-wrap a.btn2>div{
-	width: 150px;
-	height: 85px;
-   border-radius: 6px;
-   background-color: #008d8f;
-}
-section.sec0 .text-area .btn-wrap a.btn2 span {
-   color: white;
-   padding-right: 0.5rem;
-   line-height: 85px;
-}
+
 section.sec0 .text-area .btn-wrap a.btn2 div img {
 	height: 1rem;
 }
