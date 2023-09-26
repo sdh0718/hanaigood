@@ -332,7 +332,7 @@ section.sec0 .logo-area img:nth-child(2) {
 }
 
 section.sec0 .cont-area {
-   height: 75%;
+   height: 90%;
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-between;
@@ -341,6 +341,11 @@ section.sec0 .cont-area {
 section.sec0 .text-area {
    min-width: 370px;
 }
+
+section.sec0 .text-area .logos {
+	padding-bottom: 1rem;
+}
+
 section.sec0 .text-area h2 {
    font-size: 1.6rem;
    padding-bottom: 2rem;
@@ -357,6 +362,7 @@ section.sec0 .text-area h1 span.color2 {
    color: #d60033;
 }
 section.sec0 .text-area h1 span.color3 {
+	display: block;
    color: #3b8587;
 }
 section.sec0 .text-area p {
@@ -385,20 +391,17 @@ section.sec0 .text-area .btn-wrap a.btn {
    padding: 0;
    border-radius: 6px;
 }
+section.sec0 .text-area .btn-wrap div>div{
+	width: 100%;
+	color: #3b8587;
+	text-align: center;
+	font-size: 0.9rem;;
+   line-height: 1.3rem;
+}
 section.sec0 .text-area .btn-wrap a.btn1 {
 	margin-right: 0.5rem;
 }
-section.sec0 .text-area .btn-wrap a.btn2>div{
-	width: 150px;
-	height: 85px;
-   border-radius: 6px;
-   background-color: #008d8f;
-}
-section.sec0 .text-area .btn-wrap a.btn2 span {
-   color: white;
-   padding-right: 0.5rem;
-   line-height: 85px;
-}
+
 section.sec0 .text-area .btn-wrap a.btn2 div img {
 	height: 1rem;
 }
@@ -1600,20 +1603,13 @@ section#mo-video-modal .modal .movie-bar {
 
    section.sec0 {
       height: 100vh;
-      padding: 0;
+      padding: 70px 0 0 0;
    }
 
    section.sec0 > div:nth-child(1) {
-      flex-flow: row nowrap;
-      align-items: flex-end;
-      padding: 0 1.5rem;
-      height: 7%;
-      min-height: 50px;
+      height: 90%;
    }
    section.sec0 > div:nth-child(2) {
-      height: 80%;
-   }
-   section.sec0 > div:nth-child(3) {
       height: 10%;
       min-height: 80px;
    }
@@ -1621,6 +1617,10 @@ section#mo-video-modal .modal .movie-bar {
    section.sec0 .cont-area,
    section.sec0 .logo-area {
       height: unset;
+		padding: 0;
+   }
+	section.sec0 .text-area {
+      padding: 0;
    }
    section.sec0 .mo-img-area {
       display: block;
@@ -1730,6 +1730,7 @@ section#mo-video-modal .modal .movie-bar {
    }
    footer.footer .top-area {
       padding: 1.5rem 0 0 0;
+		text-align: center;
 /*
       padding-left: 0.5rem;
       flex-flow: column-reverse !important;
@@ -1753,7 +1754,6 @@ section#mo-video-modal .modal .movie-bar {
    }
    footer.footer .top-area a {
       font-size: 0.8rem;
-      display: block;
    }
    footer.footer p.copyright {
       padding: 1rem 1rem;
@@ -1937,9 +1937,17 @@ section#mo-video-modal .modal .movie-bar {
    section.sec0 .text-area h2 {
       font-size: 1.1rem;
    }
+   section.sec0 .text-area .logos {
+
+	}
    section.sec0 .text-area h1 {
-      font-size: 2.6rem;
+      font-size: 2.3rem;
    }
+	section.sec0 .text-area h1 span.color3 {
+		display: inline-block;
+	}
+
+
 	section.sec0 .text-area .btn-wrap {
 		justify-content: center
 	}
@@ -2024,6 +2032,17 @@ section#mo-video-modal .modal .movie-bar {
 ========================================================================================================= */
 
 @media (max-width: 400px) {
+
+	section.sec0 {
+      padding-top: 70px;
+   }
+   section.sec0 > div:nth-child(1) {
+      min-height: unset;
+   }
+   section.sec0 > div:nth-child(2) {
+		display: none;
+   }
+
    section.sec2 .cont-area img {
       width: 80%;
       padding-bottom: 1rem;
@@ -2040,18 +2059,15 @@ section#mo-video-modal .modal .movie-bar {
 }
 
 @media (max-height: 800px) {
+/*
    section.sec0 > div:nth-child(1) {
       height: 10%;
       min-height: unset;
    }
-   section.sec0 > div:nth-child(2) {
-      height: 80%;
-      min-height: unset;
-   }
-   section.sec0 > div:nth-child(3) {
-      height: 10%;
-      min-height: unset;
-   }
+*/
+
+
+
    section.sec0 .more-area i {
       width: 24px;
    }
